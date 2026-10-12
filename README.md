@@ -81,6 +81,17 @@ The app will be available at:
 | `pnpm db:reset` | Reset database (migrate + seed) |
 | `pnpm db:studio` | Open Prisma Studio |
 
+## Test runners
+
+`pnpm test` runs unit/integration tests with Vitest. Files under
+`tests/e2e/` are excluded because they require the Playwright runner.
+Run them with `pnpm test:e2e` (or `pnpm test:e2e --project=chromium`
+for a single browser project).
+
+Currently only E2E tests exist. Until unit/integration tests are added,
+Vitest reports `No test files found`. For an explicit temporary empty-suite
+check, run `pnpm exec vitest run --passWithNoTests`; this does not verify application behavior.
+
 ## Demo Credentials
 
 **Admin Account:**
