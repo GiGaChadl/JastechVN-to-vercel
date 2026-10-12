@@ -1,12 +1,16 @@
-import { configDefaults, defineConfig } from 'vitest/config';
-import react from '@vitejs/plugin-react';
-import path from 'path';
+import { configDefaults, defineConfig } from 'vitest/config'
+import react from '@vitejs/plugin-react'
+import path from 'path'
 
 export default defineConfig({
   plugins: [react()],
   test: {
     // Browser tests use the Playwright runner, not Vitest.
-    exclude: [...configDefaults.exclude, 'tests/e2e/**'],
+    exclude: [
+      ...configDefaults.exclude,
+      'tests/e2e/**',
+      'prisma/database.test.ts',
+    ],
     environment: 'jsdom',
     globals: true,
     setupFiles: ['./src/tests/setup.ts'],
@@ -16,4 +20,4 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
-});
+})

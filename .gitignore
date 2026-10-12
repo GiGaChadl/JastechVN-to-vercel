@@ -20,9 +20,6 @@ dist/
 # Runtime uploads (local media storage)
 .runtime/
 
-# Prisma
-prisma/migrations/
-
 # IDE
 .vscode/
 .idea/

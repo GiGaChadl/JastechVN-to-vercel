@@ -1,7 +1,592 @@
-// This is an initial empty schema - models will be added in Milestone 1
-
 generator client {
   provider = "prisma-client-js"
+}
+
+enum Locale {
+  ja
+  en
+}
+
+enum UserRole {
+  ADMIN
+}
+
+enum ContentStatus {
+  DRAFT
+  PUBLISHED
+}
+
+enum TranslationStatus {
+  MISSING
+  DRAFT
+  READY
+  PUBLISHED
+}
+
+enum PageTemplate {
+  LANDING
+  STANDARD
+  SERVICE_DETAIL
+  CASE_STUDY_DETAIL
+  ARTICLE_DETAIL
+  COMPANY
+  CONTACT
+}
+
+enum CustomerVisibility {
+  PUBLIC
+  ANONYMIZED
+}
+
+enum MediaType {
+  IMAGE
+  VIDEO
+}
+
+enum ContactStatus {
+  NEW
+  CONTACTED
+  CLOSED
+}
+
+// Authentication storage only. Session issuance and verification belong to BE.
+model User {
+  id             String               @id @default(cuid())
+  email          String               @unique
+  passwordHash   String
+  role           UserRole             @default(ADMIN)
+  sessionVersion Int                  @default(0)
+  createdAt      DateTime             @default(now())
+  updatedAt      DateTime             @updatedAt
+  sessions       Session[]
+  passwordResets PasswordResetToken[]
+  auditLogs      AuditLog[]
+  revisions      Revision[]
+  contactNotes   ContactNote[]
+
+  @@map("users")
+}
+
+model Session {
+  id        String   @id @default(cuid())
+  tokenHash String   @unique
+  userId    String
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([expiresAt])
+  @@map("sessions")
+}
+
+model PasswordResetToken {
+  id        String    @id @default(cuid())
+  tokenHash String    @unique
+  userId    String
+  expiresAt DateTime
+  usedAt    DateTime?
+  createdAt DateTime  @default(now())
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([expiresAt])
+  @@map("password_reset_tokens")
+}
+
+model Page {
+  id           String            @id @default(cuid())
+  key          String            @unique
+  template     PageTemplate      @default(STANDARD)
+  status       ContentStatus     @default(DRAFT)
+  isDemo       Boolean           @default(false)
+  publishedAt  DateTime?
+  createdAt    DateTime          @default(now())
+  updatedAt    DateTime          @updatedAt
+  translations PageTranslation[]
+  sections     PageSection[]
+
+  @@index([status, publishedAt])
+  @@map("pages")
+}
+
+model PageTranslation {
+  id             String            @id @default(cuid())
+  pageId         String
+  locale         Locale
+  title          String?
+  slug           String?
+  content        Json?
+  status         TranslationStatus @default(MISSING)
+  isStale        Boolean           @default(false)
+  seoTitle       String?
+  seoDescription String?
+  ogTitle        String?
+  ogDescription  String?
+  ogImageId      String?
+  createdAt      DateTime          @default(now())
+  updatedAt      DateTime          @updatedAt
+  page           Page              @relation(fields: [pageId], references: [id], onDelete: Cascade)
+  ogImage        MediaAsset?       @relation(fields: [ogImageId], references: [id], onDelete: Restrict)
+
+  @@unique([pageId, locale])
+  @@unique([locale, slug])
+  @@index([ogImageId])
+  @@map("page_translations")
+}
+
+// Registry validation and bilingual publish checks are deferred to BE.
+model PageSection {
+  id            String                   @id @default(cuid())
+  pageId        String
+  type          String
+  schemaVersion Int                      @default(1)
+  position      Int
+  enabled       Boolean                  @default(true)
+  settings      Json                     @default("{}")
+  createdAt     DateTime                 @default(now())
+  updatedAt     DateTime                 @updatedAt
+  page          Page                     @relation(fields: [pageId], references: [id], onDelete: Cascade)
+  translations  PageSectionTranslation[]
+  media         PageSectionMedia[]
+
+  @@unique([pageId, position])
+  @@map("page_sections")
+}
+
+model PageSectionTranslation {
+  id        String      @id @default(cuid())
+  sectionId String
+  locale    Locale
+  data      Json        @default("{}")
+  section   PageSection @relation(fields: [sectionId], references: [id], onDelete: Cascade)
+
+  @@unique([sectionId, locale])
+  @@map("page_section_translations")
+}
+
+// Register JSON section media references here so referenced media cannot be deleted.
+model PageSectionMedia {
+  sectionId String
+  mediaId   String
+  section   PageSection @relation(fields: [sectionId], references: [id], onDelete: Cascade)
+  media     MediaAsset  @relation(fields: [mediaId], references: [id], onDelete: Restrict)
+
+  @@id([sectionId, mediaId])
+  @@index([mediaId])
+  @@map("page_section_media")
+}
+
+model Service {
+  id           String               @id @default(cuid())
+  key          String               @unique
+  status       ContentStatus        @default(DRAFT)
+  position     Int                  @default(0)
+  isDemo       Boolean              @default(false)
+  coverMediaId String?
+  publishedAt  DateTime?
+  createdAt    DateTime             @default(now())
+  updatedAt    DateTime             @updatedAt
+  coverMedia   MediaAsset?          @relation(fields: [coverMediaId], references: [id], onDelete: Restrict)
+  translations ServiceTranslation[]
+  caseStudies  CaseStudyService[]
+  contacts     ContactSubmission[]
+
+  @@index([status, position])
+  @@index([coverMediaId])
+  @@map("services")
+}
+
+model ServiceTranslation {
+  id             String            @id @default(cuid())
+  serviceId      String
+  locale         Locale
+  title          String?
+  slug           String?
+  summary        String?
+  content        Json?
+  status         TranslationStatus @default(MISSING)
+  isStale        Boolean           @default(false)
+  seoTitle       String?
+  seoDescription String?
+  ogTitle        String?
+  ogDescription  String?
+  ogImageId      String?
+  createdAt      DateTime          @default(now())
+  updatedAt      DateTime          @updatedAt
+  service        Service           @relation(fields: [serviceId], references: [id], onDelete: Cascade)
+  ogImage        MediaAsset?       @relation(fields: [ogImageId], references: [id], onDelete: Restrict)
+
+  @@unique([serviceId, locale])
+  @@unique([locale, slug])
+  @@index([ogImageId])
+  @@map("service_translations")
+}
+
+model CaseStudy {
+  id                 String                 @id @default(cuid())
+  key                String                 @unique
+  status             ContentStatus          @default(DRAFT)
+  customerVisibility CustomerVisibility     @default(ANONYMIZED)
+  customerName       String?
+  customerLogoId     String?
+  coverMediaId       String?
+  technologies       String[]               @default([])
+  teamSize           Int?
+  featured           Boolean                @default(false)
+  isDemo             Boolean                @default(false)
+  publishedAt        DateTime?
+  createdAt          DateTime               @default(now())
+  updatedAt          DateTime               @updatedAt
+  customerLogo       MediaAsset?            @relation("CustomerLogo", fields: [customerLogoId], references: [id], onDelete: Restrict)
+  coverMedia         MediaAsset?            @relation("CaseStudyCover", fields: [coverMediaId], references: [id], onDelete: Restrict)
+  translations       CaseStudyTranslation[]
+  services           CaseStudyService[]
+
+  @@index([status, featured, publishedAt])
+  @@index([customerLogoId])
+  @@index([coverMediaId])
+  @@map("case_studies")
+}
+
+model CaseStudyTranslation {
+  id             String            @id @default(cuid())
+  caseStudyId    String
+  locale         Locale
+  title          String?
+  slug           String?
+  anonymousLabel String?
+  industry       String?
+  duration       String?
+  summary        String?
+  challenge      Json?
+  solution       Json?
+  results        Json?
+  testimonial    Json?
+  status         TranslationStatus @default(MISSING)
+  isStale        Boolean           @default(false)
+  seoTitle       String?
+  seoDescription String?
+  ogTitle        String?
+  ogDescription  String?
+  ogImageId      String?
+  createdAt      DateTime          @default(now())
+  updatedAt      DateTime          @updatedAt
+  caseStudy      CaseStudy         @relation(fields: [caseStudyId], references: [id], onDelete: Cascade)
+  ogImage        MediaAsset?       @relation(fields: [ogImageId], references: [id], onDelete: Restrict)
+
+  @@unique([caseStudyId, locale])
+  @@unique([locale, slug])
+  @@index([ogImageId])
+  @@map("case_study_translations")
+}
+
+model CaseStudyService {
+  caseStudyId String
+  serviceId   String
+  caseStudy   CaseStudy @relation(fields: [caseStudyId], references: [id], onDelete: Cascade)
+  service     Service   @relation(fields: [serviceId], references: [id], onDelete: Restrict)
+
+  @@id([caseStudyId, serviceId])
+  @@index([serviceId])
+  @@map("case_study_services")
+}
+
+model Post {
+  id           String            @id @default(cuid())
+  key          String            @unique
+  status       ContentStatus     @default(DRAFT)
+  isDemo       Boolean           @default(false)
+  coverMediaId String?
+  publishedAt  DateTime?
+  createdAt    DateTime          @default(now())
+  updatedAt    DateTime          @updatedAt
+  coverMedia   MediaAsset?       @relation(fields: [coverMediaId], references: [id], onDelete: Restrict)
+  translations PostTranslation[]
+  categories   PostCategory[]
+  tags         PostTag[]
+
+  @@index([status, publishedAt])
+  @@index([coverMediaId])
+  @@map("posts")
+}
+
+model PostTranslation {
+  id             String            @id @default(cuid())
+  postId         String
+  locale         Locale
+  title          String?
+  slug           String?
+  excerpt        String?
+  content        Json?
+  status         TranslationStatus @default(MISSING)
+  isStale        Boolean           @default(false)
+  seoTitle       String?
+  seoDescription String?
+  ogTitle        String?
+  ogDescription  String?
+  ogImageId      String?
+  createdAt      DateTime          @default(now())
+  updatedAt      DateTime          @updatedAt
+  post           Post              @relation(fields: [postId], references: [id], onDelete: Cascade)
+  ogImage        MediaAsset?       @relation(fields: [ogImageId], references: [id], onDelete: Restrict)
+
+  @@unique([postId, locale])
+  @@unique([locale, slug])
+  @@index([ogImageId])
+  @@map("post_translations")
+}
+
+model Category {
+  id           String                @id @default(cuid())
+  key          String                @unique
+  translations CategoryTranslation[]
+  posts        PostCategory[]
+
+  @@map("categories")
+}
+
+model CategoryTranslation {
+  id         String   @id @default(cuid())
+  categoryId String
+  locale     Locale
+  name       String
+  slug       String
+  category   Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+
+  @@unique([categoryId, locale])
+  @@unique([locale, slug])
+  @@map("category_translations")
+}
+
+model Tag {
+  id           String           @id @default(cuid())
+  key          String           @unique
+  translations TagTranslation[]
+  posts        PostTag[]
+
+  @@map("tags")
+}
+
+model TagTranslation {
+  id     String @id @default(cuid())
+  tagId  String
+  locale Locale
+  name   String
+  slug   String
+  tag    Tag    @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@unique([tagId, locale])
+  @@unique([locale, slug])
+  @@map("tag_translations")
+}
+
+model PostCategory {
+  postId     String
+  categoryId String
+  post       Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
+  category   Category @relation(fields: [categoryId], references: [id], onDelete: Restrict)
+
+  @@id([postId, categoryId])
+  @@index([categoryId])
+  @@map("post_categories")
+}
+
+model PostTag {
+  postId String
+  tagId  String
+  post   Post   @relation(fields: [postId], references: [id], onDelete: Cascade)
+  tag    Tag    @relation(fields: [tagId], references: [id], onDelete: Restrict)
+
+  @@id([postId, tagId])
+  @@index([tagId])
+  @@map("post_tags")
+}
+
+model MediaAsset {
+  id                String                  @id @default(cuid())
+  driver            String                  @default("local")
+  storageKey        String
+  url               String
+  type              MediaType
+  mimeType          String
+  sizeBytes         BigInt
+  width             Int?
+  height            Int?
+  focalX            Float                   @default(0.5)
+  focalY            Float                   @default(0.5)
+  metadata          Json                    @default("{}")
+  posterId          String?
+  createdAt         DateTime                @default(now())
+  updatedAt         DateTime                @updatedAt
+  poster            MediaAsset?             @relation("VideoPoster", fields: [posterId], references: [id], onDelete: Restrict)
+  videos            MediaAsset[]            @relation("VideoPoster")
+  translations      MediaAssetTranslation[]
+  sections          PageSectionMedia[]
+  services          Service[]
+  caseStudies       CaseStudy[]             @relation("CaseStudyCover")
+  customerLogos     CaseStudy[]             @relation("CustomerLogo")
+  posts             Post[]
+  pageOgImages      PageTranslation[]
+  serviceOgImages   ServiceTranslation[]
+  caseStudyOgImages CaseStudyTranslation[]
+  postOgImages      PostTranslation[]
+
+  @@unique([driver, storageKey])
+  @@index([posterId])
+  @@map("media_assets")
+}
+
+model MediaAssetTranslation {
+  id      String     @id @default(cuid())
+  mediaId String
+  locale  Locale
+  alt     String?
+  caption String?
+  media   MediaAsset @relation(fields: [mediaId], references: [id], onDelete: Cascade)
+
+  @@unique([mediaId, locale])
+  @@map("media_asset_translations")
+}
+
+model Menu {
+  id        String     @id @default(cuid())
+  key       String     @unique
+  items     MenuItem[]
+  updatedAt DateTime   @updatedAt
+
+  @@map("menus")
+}
+
+model MenuItem {
+  id           String                @id @default(cuid())
+  menuId       String
+  parentId     String?
+  position     Int
+  enabled      Boolean               @default(true)
+  openInNewTab Boolean               @default(false)
+  menu         Menu                  @relation(fields: [menuId], references: [id], onDelete: Cascade)
+  parent       MenuItem?             @relation("MenuTree", fields: [parentId, menuId], references: [id, menuId], onDelete: NoAction)
+  children     MenuItem[]            @relation("MenuTree")
+  translations MenuItemTranslation[]
+
+  @@unique([id, menuId])
+  @@unique([menuId, position])
+  @@index([parentId, menuId])
+  @@map("menu_items")
+}
+
+model MenuItemTranslation {
+  id         String   @id @default(cuid())
+  menuItemId String
+  locale     Locale
+  label      String
+  href       String
+  menuItem   MenuItem @relation(fields: [menuItemId], references: [id], onDelete: Cascade)
+
+  @@unique([menuItemId, locale])
+  @@map("menu_item_translations")
+}
+
+model SiteSetting {
+  key       String   @id
+  value     Json
+  updatedAt DateTime @updatedAt
+
+  @@map("site_settings")
+}
+
+model ContactSubmission {
+  id                   String        @id @default(cuid())
+  name                 String
+  company              String
+  jobTitle             String?
+  email                String
+  phone                String?
+  serviceId            String?
+  expectedStart        String?
+  message              String
+  privacyAcceptedAt    DateTime
+  privacyPolicyVersion String
+  locale               Locale
+  utmSource            String?
+  utmMedium            String?
+  utmCampaign          String?
+  utmTerm              String?
+  utmContent           String?
+  referrer             String?
+  idempotencyKey       String?       @unique
+  status               ContactStatus @default(NEW)
+  deletedAt            DateTime?
+  createdAt            DateTime      @default(now())
+  updatedAt            DateTime      @updatedAt
+  service              Service?      @relation(fields: [serviceId], references: [id], onDelete: SetNull)
+  notes                ContactNote[]
+
+  @@index([status, deletedAt, createdAt])
+  @@index([email])
+  @@index([serviceId])
+  @@map("contact_submissions")
+}
+
+model ContactNote {
+  id        String            @id @default(cuid())
+  contactId String
+  authorId  String?
+  body      String
+  createdAt DateTime          @default(now())
+  updatedAt DateTime          @updatedAt
+  contact   ContactSubmission @relation(fields: [contactId], references: [id], onDelete: Cascade)
+  author    User?             @relation(fields: [authorId], references: [id], onDelete: SetNull)
+
+  @@index([contactId, createdAt])
+  @@index([authorId])
+  @@map("contact_notes")
+}
+
+model Redirect {
+  id         String   @id @default(cuid())
+  locale     Locale
+  sourcePath String
+  targetPath String
+  statusCode Int      @default(301)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@unique([locale, sourcePath])
+  @@map("redirects")
+}
+
+// Polymorphic history intentionally survives content deletion.
+// BE must allowlist entityType and exclude secrets/contact payloads from snapshots.
+model Revision {
+  id         String   @id @default(cuid())
+  entityType String
+  entityId   String
+  version    Int
+  snapshot   Json
+  authorId   String?
+  createdAt  DateTime @default(now())
+  author     User?    @relation(fields: [authorId], references: [id], onDelete: SetNull)
+
+  @@unique([entityType, entityId, version])
+  @@index([authorId])
+  @@map("revisions")
+}
+
+model AuditLog {
+  id         String   @id @default(cuid())
+  actorId    String?
+  action     String
+  entityType String
+  entityId   String?
+  metadata   Json     @default("{}")
+  createdAt  DateTime @default(now())
+  actor      User?    @relation(fields: [actorId], references: [id], onDelete: SetNull)
+
+  @@index([entityType, entityId, createdAt])
+  @@index([actorId, createdAt])
+  @@map("audit_logs")
 }
 
 datasource db {
