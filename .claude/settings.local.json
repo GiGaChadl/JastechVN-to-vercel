@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm create *)",
+      "Bash(npm install *)",
+      "Bash(corepack enable *)",
+      "Bash(corepack prepare *)"
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+// This is an initial empty schema - models will be added in Milestone 1
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}

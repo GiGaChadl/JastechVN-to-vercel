@@ -1,0 +1,33 @@
+{
+  "common": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "caseStudies": "Case Studies",
+    "insights": "Insights",
+    "contact": "Contact",
+    "privacy": "Privacy Policy",
+    "notFound": "Page not found",
+    "loading": "Loading..."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "caseStudies": "Case Studies",
+    "insights": "Insights",
+    "contact": "Contact"
+  },
+  "home": {
+    "hero": {
+      "title": "Vietnam's Most Trusted Software Development Partner for Japanese Companies",
+      "description": "We guide your digital transformation to success with high technical capabilities and transparent communication.",
+      "cta": "Contact Us",
+      "viewProjects": "View Projects"
+    }
+  },
+  "footer": {
+    "copyright": "© {year} Jastech. All rights reserved.",
+    "companyName": "Jastech Co., Ltd."
+  }
+}

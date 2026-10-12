@@ -1,0 +1,33 @@
+{
+  "common": {
+    "home": "ホーム",
+    "about": "会社概要",
+    "services": "サービス",
+    "caseStudies": "事例",
+    "insights": "インサイト",
+    "contact": "お問い合わせ",
+    "privacy": "プライバシー",
+    "notFound": "ページが見つかりません",
+    "loading": "読み込み中..."
+  },
+  "nav": {
+    "home": "ホーム",
+    "about": "会社概要",
+    "services": "サービス",
+    "caseStudies": "事例紹介",
+    "insights": "インサイト",
+    "contact": "お問い合わせ"
+  },
+  "home": {
+    "hero": {
+      "title": "ベトナムで最も信頼される、日本企業向けソフトウェア開発パートナー",
+      "description": "高い技術力と透明なコミュニケーションで、貴社のデジタルトランスフォーメーションを成功に導きます。",
+      "cta": "お問い合わせ",
+      "viewProjects": "事例を見る"
+    }
+  },
+  "footer": {
+    "copyright": "© {year} Jastech. All rights reserved.",
+    "companyName": "株式会社Jastech"
+  }
+}
