@@ -3,31 +3,335 @@
     "home": "ホーム",
     "about": "会社概要",
     "services": "サービス",
-    "caseStudies": "事例",
+    "caseStudies": "開発実績",
     "insights": "インサイト",
     "contact": "お問い合わせ",
-    "privacy": "プライバシー",
+    "privacy": "プライバシーポリシー",
     "notFound": "ページが見つかりません",
     "loading": "読み込み中..."
   },
   "nav": {
-    "home": "ホーム",
-    "about": "会社概要",
+    "trust": "信頼",
+    "challenges": "課題",
     "services": "サービス",
-    "caseStudies": "事例紹介",
-    "insights": "インサイト",
-    "contact": "お問い合わせ"
+    "whyJastech": "Jastechの強み",
+    "caseStudies": "実績紹介",
+    "process": "開発プロセス",
+    "techStack": "技術スタック",
+    "delivery": "提供体制",
+    "insights": "技術ブログ",
+    "contact": "ご相談",
+    "about": "Jastechについて",
+    "capabilities": "開発能力"
   },
   "home": {
     "hero": {
-      "title": "ベトナムで最も信頼される、日本企業向けソフトウェア開発パートナー",
-      "description": "高い技術力と透明なコミュニケーションで、貴社のデジタルトランスフォーメーションを成功に導きます。",
-      "cta": "お問い合わせ",
-      "viewProjects": "事例を見る"
+      "title": "Jastech — 高品質な技術力と日本語コミュニケーションで、\n貴社のビジネス成長を加速させる",
+      "description": "Jastechは、日本の商習慣と品質基準を深く理解したBrSE（ブリッジSE）と経験豊富なベトナム人エンジニアが一体となり、Web・モバイルアプリ開発から運用保守まで伴走支援します。",
+      "ctaPrimary": "無料で相談・お見積り",
+      "ctaSecondary": "開発実績を見る",
+      "metric1": "98%",
+      "metric1Label": "プロジェクト継続率",
+      "metric2": "N1/N2",
+      "metric2Label": "専任BrSE常駐",
+      "metric3": "50+",
+      "metric3Label": "日本案件デリバリー実績"
+    },
+    "trust": {
+      "tag": "TRUST & TRACK RECORD",
+      "title": "確かな信頼とデリバリー実績",
+      "subtitle": "日本企業との強固な信頼関係を築き、高品質なシステム開発を継続的に提供しています。",
+      "stats": [
+        {
+          "value": "7+",
+          "label": "業界実績年数",
+          "desc": "日本市場に特化した開発経験"
+        },
+        {
+          "value": "50+",
+          "label": "納品完了プロジェクト",
+          "desc": "Web / アプリ / 基幹システム"
+        },
+        {
+          "value": "30+",
+          "label": "専属ITエンジニア",
+          "desc": "厳選された優秀なテック人材"
+        },
+        {
+          "value": "100%",
+          "label": "日本語対応BrSE",
+          "desc": "円滑かつ透明な意思疎通"
+        }
+      ]
+    },
+    "challenges": {
+      "tag": "CHALLENGES WE SOLVE",
+      "JastechSolution": "ジャステック・ソリューションズ",
+      "title": "日本企業の「開発リソース不足」と「品質不安」を解消",
+      "subtitle": "オフショア開発でよくある課題を、Jastech独自の体制と品質管理でクリアにします。",
+      "items": [
+        {
+          "title": "IT人材・エンジニア不足",
+          "desc": "国内でエンジニアの採用・確保が難航し、新規プロダクト開発や機能追加のスピードが落ちている。",
+          "solution": "即戦力エンジニアを柔軟にチームへアサインし、開発ラインを迅速に立ち上げます。"
+        },
+        {
+          "title": "高騰する国内開発コスト",
+          "desc": "日本の開発会社への外注費が高騰し、限られた予算内で十分なリソースを投じられない。",
+          "solution": "ベトナムのコストメリットを活かし、高品質ながら適正なコストパフォーマンスを実現。"
+        },
+        {
+          "title": "オフショア特有の言葉の壁・認識ズレ",
+          "desc": "過去のオフショア開発で、仕様の誤解やコミュニケーションロスによる手戻りを経験した。",
+          "solution": "日本語堪能なBrSEが要件定義から仕様書作成まで担当。直接日本語での打ち合わせが可能です。"
+        },
+        {
+          "title": "品質や納期への懸念",
+          "desc": "テストが不十分でバグが多発したり、納期が遅延しないか不安がある。",
+          "solution": "日本基準のコードレビュー、自動テスト、厳格なQAプロセスでリリース品質を担保します。"
+        }
+      ]
+    },
+    "services": {
+      "tag": "OUR SERVICES",
+      "title": "ビジネスの課題に応じた柔軟な開発サービス",
+      "subtitle": "要件定義から設計・開発、QA、リリース後の保守運用までワンストップで対応します。",
+      "learnMore": "詳しく見る",
+      "items": [
+        {
+          "id": "web",
+          "badge": "Web Development",
+          "title": "Webシステム・SaaS開発",
+          "desc": "コーポレートサイト、大規模EC、管理ポータル、B2B SaaSまで、モダンなアーキテクチャで拡張性の高いWebアプリケーションを構築します。",
+          "features": [
+            "React / Next.js / Vue",
+            "クラウドネイティブ (AWS/GCP)",
+            "スケーラブルなAPI設計"
+          ]
+        },
+        {
+          "id": "app",
+          "badge": "Mobile Apps",
+          "title": "モバイルアプリ開発",
+          "desc": "iOS / Android向けネイティブアプリおよびクロスプラットフォーム開発。直感的なUI/UXと高速なレスポンスを実現します。",
+          "features": [
+            "Flutter / React Native / Swift",
+            "プッシュ通知・決済連携",
+            "App Store / Google Play審査対応"
+          ]
+        },
+        {
+          "id": "maintenance",
+          "badge": "Maintenance & Support",
+          "title": "運用保守・ラボ型開発",
+          "desc": "リリース後の障害監視、機能アップデート、セキュリティパッチ適用。専任チームを月額固定で組成するラボ型開発にも対応します。",
+          "features": [
+            "24/7システム監視・障害復旧",
+            "アジャイル・ラボ型開発体制",
+            "CI/CD自動化 & パフォーマンス改善"
+          ]
+        }
+      ]
+    },
+    "whyJastech": {
+      "tag": "WHY CHOOSE JASTECH",
+      "title": "なぜJastechが選ばれるのか",
+      "subtitle": "技術力だけでなく、日本のビジネス文化と高いコミュニケーション精度で選ばれ続けています。",
+      "points": [
+        {
+          "title": "日本語・文化への深い理解",
+          "desc": "日本企業での就業経験を持つBrSEが窓口となり、「言外の意図」や「ビジネス背景」まで汲み取ります。"
+        },
+        {
+          "title": "日本水準の品質管理（QA）",
+          "desc": "単体テストから結合テスト、E2Eテストまで網羅。納品前の厳格な品質検査を徹底しています。"
+        },
+        {
+          "title": "透明性の高い開発プロセス",
+          "desc": "Backlog、Jira、Slack、GitHubなどを共有し、毎日の進捗報告と週次定例でブラックボックス化を防ぎます。"
+        },
+        {
+          "title": "柔軟な契約モデル",
+          "desc": "プロジェクト単位の「受託開発（請負）」と、専任チームを組む「ラボ型（準委任）」を用途に応じて選択可能。"
+        },
+        {
+          "title": "強固なセキュリティ管理",
+          "desc": "NDA締結、アクセス権限管理、開発用端末のセキュリティ対策など、顧客情報の機密性を厳重に保持します。"
+        },
+        {
+          "title": "長期的なパートナーシップ",
+          "desc": "単なる下請けではなく、貴社のプロダクトの成長を共に考える技術パートナーとして伴走します。"
+        }
+      ]
+    },
+    "caseStudies": {
+      "tag": "CASE STUDIES",
+      "title": "主な開発実績",
+      "subtitle": "日本企業様とのプロジェクト実績の一部をご紹介します（NDA遵守のため一部匿名表記）。",
+      "viewAll": "すべての実績を見る",
+      "items": [
+        {
+          "client": "大手流通・小売企業様 [DRAFT]",
+          "category": "B2B EC Platform",
+          "title": "基幹連携型 B2Bコマースプラットフォーム刷新",
+          "problem": "既存システムの老朽化により保守コストが増大、スマホ対応も遅れていた。",
+          "solution": "Next.jsとマイクロサービス構成へ刷新。レスポンス速度を3倍に改善し受注処理を自動化。",
+          "tech": ["Next.js", "NestJS", "PostgreSQL", "AWS"],
+          "result": "ページ読み込み速度 60%短縮 / 運用コスト 35%削減"
+        },
+        {
+          "client": "物流テック企業様 [DRAFT]",
+          "category": "Smart Logistics App",
+          "title": "リアルタイム配送管理・ドライバー専用アプリ",
+          "problem": "紙伝票と電話による配送追跡で業務非効率と配送遅延が発生していた。",
+          "solution": "Flutterによるクロスプラットフォーム開発でGPSリアルタイム追跡と電子サインを導入。",
+          "tech": ["Flutter", "Go", "Firebase", "GCP"],
+          "result": "配送業務効率 45%向上 / 配達完了ミスゼロを達成"
+        },
+        {
+          "client": "HRクラウドサービス企業様 [DRAFT]",
+          "category": "Enterprise SaaS",
+          "title": "人事評価・タレントマネジメントSaaSの新規開発",
+          "problem": "自社エンジニア不足により新サービスのローンチ目標日に間に合わないリスク。",
+          "solution": "BrSE1名＋エンジニア4名のラボ型チームを2週間で立ち上げ、アジャイルで開発完遂。",
+          "tech": ["React", "TypeScript", "Node.js", "Docker"],
+          "result": "予定納期通りにローンチ成功 / 現在も継続開発中"
+        }
+      ]
+    },
+    "process": {
+      "tag": "DEVELOPMENT PROCESS",
+      "title": "安心のデリバリープロセス",
+      "subtitle": "お問い合わせから納品・運用まで、明確で安心できるステップで進めます。",
+      "steps": [
+        {
+          "step": "01",
+          "name": "お問い合わせ",
+          "desc": "課題や開発要件のヒアリング（オンラインMTG）"
+        },
+        {
+          "step": "02",
+          "name": "要件整理・ご提案",
+          "desc": "概算見積り、技術選定、最適なチーム体制のご提示"
+        },
+        {
+          "step": "03",
+          "name": "ご契約・体制組成",
+          "desc": "NDA・基本契約締結、専任BrSEおよびエンジニアのアサイン"
+        },
+        {
+          "step": "04",
+          "name": "設計・アジャイル開発",
+          "desc": "スプリント単位での開発と定期的な成果物レビュー"
+        },
+        {
+          "step": "05",
+          "name": "品質テスト・検収",
+          "desc": "厳格なQA検査とステージング環境でのクライアント検収"
+        },
+        {
+          "step": "06",
+          "name": "本番公開・運用保守",
+          "desc": "安全なリリースと、その後の安定稼働サポート"
+        }
+      ]
+    },
+    "delivery": {
+      "tag": "DELIVERY MODEL",
+      "title": "日越ハイブリッド連携体制",
+      "subtitle": "日本とベトナムの時差はわずか2時間。リアルタイムで円滑なプロジェクト進行が可能です。",
+      "brseRole": "BrSE（ブリッジSE）",
+      "brseDesc": "要件の正確な翻訳、仕様策定、進捗管理を担当。日本語で直接コミュニケーション可能です。",
+      "devRole": "ベトナム開発チーム",
+      "devDesc": "ベトナム工科系トップ大学出身を中心とした、技術力と向上心の高い精鋭エンジニア陣。",
+      "collabRole": "スムーズな協業環境",
+      "collabDesc": "時差-2時間のメリットを活かし、日本の就業時間内にリアルタイムでミーティングやSlack連絡が可能。"
+    },
+    "techStack": {
+      "tag": "TECHNOLOGY STACK",
+      "title": "モダンかつ堅牢なテクノロジースタック",
+      "subtitle": "プロジェクトの要件に合わせて、最適な技術を選定・導入します。",
+      "categories": [
+        {
+          "name": "Frontend",
+          "skills": ["React", "Next.js", "TypeScript", "Vue.js", "Tailwind CSS"]
+        },
+        {
+          "name": "Backend",
+          "skills": [
+            "Node.js",
+            "NestJS",
+            "Go",
+            "Python",
+            "PHP / Laravel",
+            "Java"
+          ]
+        },
+        {
+          "name": "Mobile",
+          "skills": [
+            "Flutter",
+            "React Native",
+            "iOS (Swift)",
+            "Android (Kotlin)"
+          ]
+        },
+        {
+          "name": "Database & Cloud",
+          "skills": [
+            "PostgreSQL",
+            "MySQL",
+            "MongoDB",
+            "AWS",
+            "Google Cloud",
+            "Docker"
+          ]
+        }
+      ]
+    },
+    "insights": {
+      "tag": "LATEST INSIGHTS",
+      "title": "最新インサイト & ブログ",
+      "subtitle": "オフショア開発のノウハウや技術トレンド、現場の知見を発信しています。",
+      "readMore": "記事を読む",
+      "items": [
+        {
+          "date": "2026.10.05",
+          "category": "オフショア開発ノウハウ",
+          "title": "失敗しないベトナムオフショア開発：BrSE選定の3つのポイント",
+          "excerpt": "日本企業がオフショア開発を成功させるために最も重要なBrSE（ブリッジSE）の役割とチェック基準を解説します。"
+        },
+        {
+          "date": "2026.09.20",
+          "category": "技術トレンド",
+          "title": "Next.js 15とTypeScriptを活用したモダンなSaaS開発のベストプラクティス",
+          "excerpt": "開発生産性と表示パフォーマンスを両立するためのアーキテクチャ設計と注意点。"
+        },
+        {
+          "date": "2026.09.02",
+          "category": "プロジェクト管理",
+          "title": "時差2時間を味方につける！アジャイル・スクラム開発の実践プロセス",
+          "excerpt": "日本とベトナム間で遠隔アジャイル開発をスムーズに進めるデイリースクラムの運用法。"
+        }
+      ]
+    },
+    "contactCta": {
+      "title": "ソフトウェア開発のご相談・お見積りはお気軽に",
+      "subtitle": "「まだ要件が固まっていない」「まずは概算費用を知りたい」という段階でも大歓迎です。専任の担当者が丁寧にお応えします。",
+      "button": "お問い合わせフォームへ",
+      "note": "通常、1営業日以内にご返信いたします（日本語対応）",
+      "companyPlaceholder": "例: 株式会社サンプル",
+      "namePlaceholder": "例: 山田 太郎",
+      "inquiryPlaceholder": "開発の概要、ご予算感、開始時期などをご自由にご記入ください"
     }
   },
   "footer": {
-    "copyright": "© {year} Jastech. All rights reserved.",
+    "desc": "ベトナムの優秀なエンジニアと日本語堪能なBrSEが一体となり、日本企業のソフトウェア開発を力強く支えます。",
+    "linksTitle": "ナビゲーション",
+    "contactTitle": "お問い合わせ情報",
+    "address": "ベトナム・ハノイ市 / ホーチミン市",
+    "email": "jastech@iro-kkj.org",
+    "copyright": "© {year} Jastech Co., Ltd. All rights reserved.",
     "companyName": "株式会社Jastech"
   }
 }

@@ -11,23 +11,327 @@
     "loading": "Loading..."
   },
   "nav": {
-    "home": "Home",
-    "about": "About",
+    "trust": "Trust",
+    "challenges": "Challenges",
     "services": "Services",
+    "whyJastech": "Why Jastech",
     "caseStudies": "Case Studies",
+    "process": "Process",
+    "delivery": "Delivery Model",
+    "techStack": "Tech Stack",
     "insights": "Insights",
-    "contact": "Contact"
+    "contact": "Contact",
+    "about": "About Jastech",
+    "capabilities": "Capabilities"
   },
   "home": {
     "hero": {
-      "title": "Vietnam's Most Trusted Software Development Partner for Japanese Companies",
-      "description": "We guide your digital transformation to success with high technical capabilities and transparent communication.",
-      "cta": "Contact Us",
-      "viewProjects": "View Projects"
+      "title": "Welcome to Jastech — Accelerating Your Business Growth with High Technical Standards & Fluent Japanese Communication",
+      "description": "Jastech unites Bridge SEs who deeply comprehend Japanese business practices with skilled Vietnamese engineers, delivering end-to-end web, mobile app development, and ongoing maintenance.",
+      "ctaPrimary": "Request Consultation & Estimate",
+      "ctaSecondary": "View Case Studies",
+      "metric1": "98%",
+      "metric1Label": "Client Retention Rate",
+      "metric2": "N1/N2",
+      "metric2Label": "Dedicated BrSE Onsite",
+      "metric3": "50+",
+      "metric3Label": "Projects Delivered to Japan"
+    },
+    "trust": {
+      "tag": "TRUST & TRACK RECORD",
+      "title": "Proven Track Record & Reliability",
+      "subtitle": "Building enduring partnerships with Japanese enterprises, delivering high-reliability systems consistently.",
+      "stats": [
+        {
+          "value": "7+",
+          "label": "Years in Industry",
+          "desc": "Specialized experience in the Japanese market"
+        },
+        {
+          "value": "50+",
+          "label": "Projects Delivered",
+          "desc": "Web, Mobile Apps & Enterprise Systems"
+        },
+        {
+          "value": "30+",
+          "label": "Dedicated Engineers",
+          "desc": "Hand-picked top tier engineering talent"
+        },
+        {
+          "value": "100%",
+          "label": "Japanese-fluent BrSE",
+          "desc": "Transparent & frictionless communication"
+        }
+      ]
+    },
+    "challenges": {
+      "tag": "CHALLENGES WE SOLVE",
+      "JastechSolution": "Jastech Solution",
+      "title": "Solving Engineering Shortages & Quality Concerns for Japanese Enterprises",
+      "subtitle": "Eliminating common offshore outsourcing pain points with Jastech's robust structure and strict quality control.",
+      "items": [
+        {
+          "title": "Scarcity of Domestic IT Engineers",
+          "desc": "Recruiting and retaining engineers locally in Japan is challenging, delaying product development schedules.",
+          "solution": "We rapidly onboard battle-tested engineers into your team, launching development lines swiftly."
+        },
+        {
+          "title": "Escalating Domestic Development Costs",
+          "desc": "High subcontracting rates in Japan constrain your ability to allocate sufficient resources within budget.",
+          "solution": "Leverage Vietnam's cost advantage to achieve outstanding quality with optimal cost-effectiveness."
+        },
+        {
+          "title": "Language Barrier & Misunderstandings",
+          "desc": "Previous offshore experiences suffered from specification confusion and communication breakdowns.",
+          "solution": "Bilingual BrSEs handle requirements definition and specifications. Conduct meetings directly in Japanese."
+        },
+        {
+          "title": "Concerns Over Quality & Deadlines",
+          "desc": "Worries about inadequate testing, bug outbreaks, or project delivery delays.",
+          "solution": "Rigorous code reviews, automated testing, and comprehensive QA according to Japanese standards guarantee release quality."
+        }
+      ]
+    },
+    "services": {
+      "tag": "OUR SERVICES",
+      "title": "Tailored Software Development Services for Every Business Need",
+      "subtitle": "End-to-end support from requirements definition, architecture, development, QA to post-release maintenance.",
+      "learnMore": "Learn More",
+      "items": [
+        {
+          "id": "web",
+          "badge": "Web Development",
+          "title": "Web Systems & SaaS Development",
+          "desc": "From corporate portals and large-scale eCommerce to management tools and B2B SaaS, we build resilient, scalable web applications with modern architecture.",
+          "features": [
+            "React / Next.js / Vue",
+            "Cloud-native (AWS/GCP)",
+            "Scalable API Architecture"
+          ]
+        },
+        {
+          "id": "app",
+          "badge": "Mobile Apps",
+          "title": "Mobile Application Development",
+          "desc": "Native and cross-platform apps for iOS and Android. Crafting intuitive UX/UI paired with high performance and smooth responsiveness.",
+          "features": [
+            "Flutter / React Native / Swift",
+            "Push Notifications & Payment",
+            "App Store & Google Play Publishing"
+          ]
+        },
+        {
+          "id": "maintenance",
+          "badge": "Maintenance & Support",
+          "title": "Maintenance & Dedicated Lab Teams",
+          "desc": "Post-launch uptime monitoring, feature enhancements, and security updates. We also provide dedicated ODC (Offshore Development Center) lab teams on monthly fixed contracts.",
+          "features": [
+            "24/7 Monitoring & Incident Recovery",
+            "Agile & Lab Team Setup",
+            "CI/CD Automation & Performance Tuning"
+          ]
+        }
+      ]
+    },
+    "whyJastech": {
+      "tag": "WHY CHOOSE JASTECH",
+      "title": "Why Japanese Clients Choose Jastech",
+      "subtitle": "Selected not only for engineering prowess, but for deep understanding of Japanese business culture and flawless communication.",
+      "points": [
+        {
+          "title": "Deep Cultural & Language Alignment",
+          "desc": "BrSEs with extensive Japan-based experience act as single points of contact, understanding implicit requirements and business context."
+        },
+        {
+          "title": "Japanese Quality Assurance (QA)",
+          "desc": "Comprehensive unit, integration, and E2E automated test suites ensuring zero-defect releases before final delivery."
+        },
+        {
+          "title": "Transparent Development Workflow",
+          "desc": "Shared access to Backlog, Jira, Slack, and GitHub. Daily updates and weekly sprint reviews eliminate black-box risks."
+        },
+        {
+          "title": "Flexible Contract Models",
+          "desc": "Choose between fixed-price contract (project-based) or dedicated Lab model (quasi-delegation) to match your timeline."
+        },
+        {
+          "title": "Robust Information Security",
+          "desc": "Strict NDAs, granular access permissions, and hardened developer workstations safeguard all client intellectual property."
+        },
+        {
+          "title": "Long-term Strategic Partnership",
+          "desc": "More than an offshore vendor — we act as your trusted technology partner committed to your digital product's sustainable growth."
+        }
+      ]
+    },
+    "caseStudies": {
+      "tag": "CASE STUDIES",
+      "title": "Featured Case Studies",
+      "subtitle": "A selection of projects delivered to our Japanese partners (anonymized in adherence to NDAs).",
+      "viewAll": "View All Case Studies",
+      "items": [
+        {
+          "client": "Major Retail & Logistics Group [DRAFT]",
+          "category": "B2B EC Platform",
+          "title": "Core B2B E-Commerce System Modernization",
+          "problem": "Legacy system had escalating maintenance overhead and lacked mobile responsiveness.",
+          "solution": "Re-engineered with Next.js microservices. Response speed improved threefold, order processing fully automated.",
+          "tech": ["Next.js", "NestJS", "PostgreSQL", "AWS"],
+          "result": "Page load time reduced by 60% / Operational cost lowered by 35%"
+        },
+        {
+          "client": "Logistics Tech Enterprise [DRAFT]",
+          "category": "Smart Logistics App",
+          "title": "Real-time Fleet Dispatch & Driver App",
+          "problem": "Paper manifests and phone check-ins caused shipment delays and tracking blind spots.",
+          "solution": "Built cross-platform app with Flutter featuring real-time GPS tracking and digital sign-off.",
+          "tech": ["Flutter", "Go", "Firebase", "GCP"],
+          "result": "Dispatch efficiency boosted by 45% / Zero missed deliveries"
+        },
+        {
+          "client": "HR Cloud SaaS Startup [DRAFT]",
+          "category": "Enterprise SaaS",
+          "title": "Talent Assessment & Performance Review SaaS",
+          "problem": "In-house talent scarcity posed high risks to missing strict market launch deadlines.",
+          "solution": "Assembled a dedicated lab team (1 BrSE + 4 engineers) in 2 weeks, delivering the MVP via Agile sprints.",
+          "tech": ["React", "TypeScript", "Node.js", "Docker"],
+          "result": "Launched successfully on target / Continuous development ongoing"
+        }
+      ]
+    },
+    "process": {
+      "tag": "DEVELOPMENT PROCESS",
+      "title": "Transparent & Reliable Delivery Process",
+      "subtitle": "Clear, dependable milestones guiding your project from initial inquiry to deployment and support.",
+      "steps": [
+        {
+          "step": "01",
+          "name": "Initial Inquiry",
+          "desc": "Hearing your objectives and requirements (online video consultation)"
+        },
+        {
+          "step": "02",
+          "name": "Scoping & Proposal",
+          "desc": "Architecture design, estimate, and recommended team structure"
+        },
+        {
+          "step": "03",
+          "name": "Agreement & Onboarding",
+          "desc": "NDA & Master Service Agreement, assigning dedicated BrSE and developers"
+        },
+        {
+          "step": "04",
+          "name": "Design & Agile Sprints",
+          "desc": "Bi-weekly sprint iterations with regular demo reviews"
+        },
+        {
+          "step": "05",
+          "name": "QA & User Acceptance",
+          "desc": "Exhaustive QA testing and client acceptance testing on staging environment"
+        },
+        {
+          "step": "06",
+          "name": "Production Launch & Support",
+          "desc": "Safe release and continuous uptime & enhancement support"
+        }
+      ]
+    },
+    "delivery": {
+      "tag": "DELIVERY MODEL",
+      "title": "Japan-Vietnam Hybrid Delivery Model",
+      "subtitle": "Only 2 hours time difference between Tokyo and Vietnam enables seamless, real-time collaboration.",
+      "brseRole": "Bridge SE (BrSE)",
+      "brseDesc": "Manages specification translation, requirement elicitation, and daily sprint tracking in fluent Japanese.",
+      "devRole": "Vietnam Engineering Team",
+      "devDesc": "Skilled engineers graduated from top engineering universities in Vietnam with strong problem-solving capabilities.",
+      "collabRole": "Seamless Daily Collaboration",
+      "collabDesc": "Thanks to the 2-hour timezone gap, sync meetings and Slack discussions happen during normal Tokyo business hours."
+    },
+    "techStack": {
+      "tag": "TECHNOLOGY STACK",
+      "title": "Modern & Resilient Technology Stack",
+      "subtitle": "Selecting and integrating optimal technologies tailored precisely to your project requirements.",
+      "categories": [
+        {
+          "name": "Frontend",
+          "skills": ["React", "Next.js", "TypeScript", "Vue.js", "Tailwind CSS"]
+        },
+        {
+          "name": "Backend",
+          "skills": [
+            "Node.js",
+            "NestJS",
+            "Go",
+            "Python",
+            "PHP / Laravel",
+            "Java"
+          ]
+        },
+        {
+          "name": "Mobile",
+          "skills": [
+            "Flutter",
+            "React Native",
+            "iOS (Swift)",
+            "Android (Kotlin)"
+          ]
+        },
+        {
+          "name": "Database & Cloud",
+          "skills": [
+            "PostgreSQL",
+            "MySQL",
+            "MongoDB",
+            "AWS",
+            "Google Cloud",
+            "Docker"
+          ]
+        }
+      ]
+    },
+    "insights": {
+      "tag": "LATEST INSIGHTS",
+      "title": "Latest Insights & Technical Blog",
+      "subtitle": "Sharing offshore development best practices, technical trends, and field insights.",
+      "readMore": "Read Article",
+      "items": [
+        {
+          "date": "2026.10.05",
+          "category": "Offshore Best Practices",
+          "title": "Successful Vietnam Offshore Development: 3 Criteria for Selecting a BrSE",
+          "excerpt": "Key evaluation checkpoints and BrSE roles crucial for Japanese enterprises venturing into offshore development."
+        },
+        {
+          "date": "2026.09.20",
+          "category": "Tech Trends",
+          "title": "Best Practices for Modern B2B SaaS Architecture Using Next.js 15 and TypeScript",
+          "excerpt": "Architectural guidelines to maximize developer productivity while ensuring stellar runtime performance."
+        },
+        {
+          "date": "2026.09.02",
+          "category": "Project Management",
+          "title": "Capitalizing on the 2-Hour Time Difference: Agile Scrum in Action",
+          "excerpt": "How to operate daily standups and sprint planning smoothly across Tokyo and Hanoi/HCMC."
+        }
+      ]
+    },
+    "contactCta": {
+      "title": "Ready to Discuss Your Next Software Project?",
+      "subtitle": "Even if your requirements are still evolving or you simply need a rough cost estimate, feel free to reach out. Our team is here to assist.",
+      "button": "Go to Contact Form",
+      "note": "We typically reply within 1 business day (Japanese & English support)",
+      "companyPlaceholder": "Taro Yamada, Inc.",
+      "namePlaceholder": "John Doe",
+      "inquiryPlaceholder": "Please share more details about your project."
     }
   },
   "footer": {
-    "copyright": "© {year} Jastech. All rights reserved.",
+    "desc": "Empowering Japanese enterprises through exceptional Vietnamese software engineers and bilingual Bridge SEs.",
+    "linksTitle": "Navigation",
+    "contactTitle": "Contact Info",
+    "address": "Hanoi & Ho Chi Minh City, Vietnam",
+    "email": "jastech@iro-kkj.org",
+    "copyright": "© {year} Jastech Co., Ltd. All rights reserved.",
     "companyName": "Jastech Co., Ltd."
   }
 }

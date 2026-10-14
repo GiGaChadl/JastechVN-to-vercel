@@ -5,25 +5,43 @@
 @tailwind utilities;
 
 :root {
+  /* Primary blue */
   --primary: 221.2 83.2% 53.3%;
   --primary-foreground: 210 40% 98%;
 
+  /* Background */
   --background: 0 0% 100%;
   --foreground: 222.2 84% 4.9%;
 
+  /* Light blue & muted */
+  --light-blue: 214 100% 97%;
   --muted: 210 40% 96.1%;
   --muted-foreground: 215.4 16.3% 46.9%;
 
+  /* Navy */
+  --navy: 222 47% 11%;
+
+  /* White & off-white */
+  --white: 0 0% 100%;
+  --off-white: 210 40% 98%;
+
+  /* Accent cyan */
+  --accent-cyan: 187 94% 43%;
+
+  /* Card */
   --card: 0 0% 100%;
   --card-foreground: 222.2 84% 4.9%;
 
+  /* Border & input */
   --border: 214.3 31.8% 91.4%;
   --input: 214.3 31.8% 91.4%;
   --ring: 221.2 83.2% 53.3%;
 
+  /* Destructive */
   --destructive: 0 84.2% 60.2%;
   --destructive-foreground: 210 40% 98%;
 
+  /* Radius */
   --radius: 0.5rem;
 }
 

@@ -396,11 +396,11 @@ Website lấy cảm hứng từ phong cách của Netcompany nhưng không sao c
 
 ### 11.2. Màu sắc sơ bộ
 
-- Primary blue: lấy từ logo.
-- Light blue: background và section nhấn.
-- Navy: chữ, footer và các khu vực cần tạo cảm giác tin cậy.
-- White/off-white: nền chính.
-- Accent cyan: trạng thái tương tác hoặc CTA phụ.
+- Primary blue: lấy từ logo. #3c6ca7
+- Light blue: background và section nhấn. #EFF6FF
+- Navy: chữ, footer và các khu vực cần tạo cảm giác tin cậy. #0F172A
+- White/off-white: nền chính. #FFFFFF/ #F8FAFC
+- Accent cyan: trạng thái tương tác hoặc CTA phụ. #06B6D4
 
 ### 11.3. Font đề xuất
 
@@ -494,16 +494,16 @@ Chưa cần tách NestJS trong MVP. Backend có thể được tách thành dị
 
 Thông tin do Jastech cung cấp:
 
-| Trường | Giá trị |
-|---|---|
-| Tên pháp nhân | CÔNG TY TNHH JASTECH |
-| Tên quốc tế | JASTECH |
-| Tên viết tắt | JASTECH |
-| Mã số thuế | 0317141031 |
-| Ngày cấp | 25/01/2022 |
-| Người đại diện pháp luật | NGUYỄN ĐỨC THUẬN |
-| Điện thoại | 0969000063 |
-| Địa chỉ | 39 Hậu Giang, Phường 4, Quận Tân Bình, Thành phố Hồ Chí Minh, Việt Nam |
+| Trường                   | Giá trị                                                                |
+| ------------------------ | ---------------------------------------------------------------------- |
+| Tên pháp nhân            | CÔNG TY TNHH JASTECH                                                   |
+| Tên quốc tế              | JASTECH                                                                |
+| Tên viết tắt             | JASTECH                                                                |
+| Mã số thuế               | 0317141031                                                             |
+| Ngày cấp                 | 25/01/2022                                                             |
+| Người đại diện pháp luật | NGUYỄN ĐỨC THUẬN                                                       |
+| Điện thoại               | 0969000063                                                             |
+| Địa chỉ                  | 39 Hậu Giang, Phường 4, Quận Tân Bình, Thành phố Hồ Chí Minh, Việt Nam |
 
 Thông tin trên cần được kiểm tra lại trước khi ra mắt, đặc biệt là:
 
@@ -692,22 +692,21 @@ Các dữ liệu sau không chặn việc bắt đầu thiết kế nhưng phả
 
 ## 20. Các quyết định đã chốt
 
-| Hạng mục | Quyết định |
-|---|---|
-| Mô hình kinh doanh | B2B |
-| Thị trường chính | Nhật Bản |
-| Mục tiêu | Giới thiệu năng lực và tìm kiếm khách hàng |
-| Ngôn ngữ | Nhật và Anh, nội dung tương ứng 1:1 |
-| Dịch vụ MVP | Web, application và maintenance |
-| Người dùng công khai | Chỉ đọc nội dung và gửi liên hệ |
-| Tài khoản admin | Một tài khoản Admin |
-| Workflow nội dung | Draft → Published |
-| Page builder | Section dựng sẵn, hỗ trợ tùy chỉnh sâu có kiểm soát |
-| Tạo trang mới | Có |
-| Form liên hệ | Lưu trong admin và gửi email thông báo |
-| File đính kèm | Không |
-| Bảng giá | Không công khai |
-| Hero | Hỗ trợ ảnh và video, bao gồm mobile |
-| Media hosting | Cloudinary trong MVP |
-| CRM và tích hợp ngoài | Chưa cần trong MVP |
-
+| Hạng mục              | Quyết định                                          |
+| --------------------- | --------------------------------------------------- |
+| Mô hình kinh doanh    | B2B                                                 |
+| Thị trường chính      | Nhật Bản                                            |
+| Mục tiêu              | Giới thiệu năng lực và tìm kiếm khách hàng          |
+| Ngôn ngữ              | Nhật và Anh, nội dung tương ứng 1:1                 |
+| Dịch vụ MVP           | Web, application và maintenance                     |
+| Người dùng công khai  | Chỉ đọc nội dung và gửi liên hệ                     |
+| Tài khoản admin       | Một tài khoản Admin                                 |
+| Workflow nội dung     | Draft → Published                                   |
+| Page builder          | Section dựng sẵn, hỗ trợ tùy chỉnh sâu có kiểm soát |
+| Tạo trang mới         | Có                                                  |
+| Form liên hệ          | Lưu trong admin và gửi email thông báo              |
+| File đính kèm         | Không                                               |
+| Bảng giá              | Không công khai                                     |
+| Hero                  | Hỗ trợ ảnh và video, bao gồm mobile                 |
+| Media hosting         | Cloudinary trong MVP                                |
+| CRM và tích hợp ngoài | Chưa cần trong MVP                                  |
