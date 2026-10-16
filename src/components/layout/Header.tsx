@@ -20,7 +20,7 @@ export function Header({ locale }: HeaderProps) {
     { href: `/${locale}/about`, label: tNav('about') },
     { href: `/${locale}/capabilities`, label: tNav('capabilities') },
     { href: `#case-studies`, label: tNav('caseStudies') },
-    { href: `#contact`, label: tNav('contact') },
+    { href: `/${locale}/contact`, label: tNav('contact') },
   ]
 
   const targetLocale = locale === 'ja' ? 'en' : 'ja'
@@ -31,7 +31,7 @@ export function Header({ locale }: HeaderProps) {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         {/* Brand Logo */}
         <Link href={`/${locale}`} className="flex items-center gap-3 group">
-          <div className="relative w-12 h-4  overflow-hidden border-slate-1500 shadow-sm flex-shrink-0">
+          <div className="relative w-24 h-7  overflow-hidden border-slate-1500 shadow-sm flex-shrink-0">
             <Image
               src="/images/logo_Jastech.jpg"
               alt="Jastech Logo"
@@ -77,7 +77,7 @@ export function Header({ locale }: HeaderProps) {
             {tNav('caseStudies')}
           </Link>
           <Link
-            href={`/${locale}#contact`}
+            href={`/${locale}/contact`}
             className="text-sm font-medium text-slate-600 hover:text-primary transition-colors py-2"
           >
             {tNav('contact')}

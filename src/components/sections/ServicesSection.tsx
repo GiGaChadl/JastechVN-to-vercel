@@ -1,5 +1,6 @@
 import { Check, ArrowRight } from 'lucide-react'
 import { useTranslations } from 'next-intl'
+import { FanCards, type FanCardItem } from '@/components/ui/fan-cards'
 
 interface ServicesSectionProps {
   locale: string
@@ -8,12 +9,48 @@ interface ServicesSectionProps {
 export function ServicesSection({ locale }: ServicesSectionProps) {
   const t = useTranslations('home.services')
 
+  const cardStyles = [
+    {
+      bg: '#F26419',
+      textColor: '#fff',
+      subtitleColor: 'rgba(255,255,255,0.78)',
+      defaultRotation: -8,
+    },
+    {
+      bg: '#ECEAE3',
+      textColor: '#1a1a1a',
+      subtitleColor: 'rgba(0,0,0,0.58)',
+      defaultRotation: 0,
+    },
+    {
+      bg: '#3B82F6',
+      textColor: '#fff',
+      subtitleColor: 'rgba(255,255,255,0.78)',
+      defaultRotation: 8,
+    },
+  ]
+
   // DANH SÁCH ẢNH DỊCH VỤ TỪ UNSPLASH (Bạn có thể tự do thay URL ảnh):
   const serviceImages = [
     'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop', // Web Systems & SaaS
     'https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=800&auto=format&fit=crop', // Mobile Apps
     'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop', // Dedicated Lab Teams & Support
   ]
+
+  const serviceCards: FanCardItem[] = [0, 1, 2].map((index) => ({
+    id: `service-${index}`,
+    title: t(`items.${index}.title`),
+    subtitle: t(`items.${index}.desc`),
+    stackIndex: index,
+    ...cardStyles[index],
+    content: (
+      <img
+        src={serviceImages[index]}
+        alt={t(`items.${index}.title`)}
+        className="h-full w-full rounded-xl object-cover"
+      />
+    ),
+  }))
 
   return (
     <section id="services" className="py-24 bg-slate-50/60 scroll-mt-20">
@@ -30,58 +67,14 @@ export function ServicesSection({ locale }: ServicesSectionProps) {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {[0, 1, 2].map((index) => (
-            <div
-              key={index}
-              className="bg-white rounded-3xl overflow-hidden border border-slate-200 hover:border-primary/50 shadow-sm hover:shadow-2xl transition-all flex flex-col justify-between group"
-            >
-              <div>
-                {/* 1. ẢNH ĐẠI DIỆN DỊCH VỤ (UNSPLASH) */}
-                <div className="w-full h-52 overflow-hidden bg-slate-100">
-                  <img
-                    src={serviceImages[index]}
-                    alt={t(`items.${index}.title`)}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-
-                {/* 2. NỘI DUNG CHI TIẾT */}
-                <div className="p-7">
-                  <h3 className="text-xl font-bold text-navy mb-3 group-hover:text-primary transition-colors">
-                    {t(`items.${index}.title`)}
-                  </h3>
-                  <p className="text-sm text-slate-600 leading-relaxed mb-6">
-                    {t(`items.${index}.desc`)}
-                  </p>
-
-                  {/* Danh sách tính năng */}
-                  <ul className="space-y-2.5 pt-4 border-t border-slate-100">
-                    {[0, 1, 2].map((fIndex) => (
-                      <li
-                        key={fIndex}
-                        className="flex items-center gap-2.5 text-xs sm:text-sm text-slate-700"
-                      >
-                        <Check className="w-4 h-4 text-emerald-500 flex-shrink-0" />
-                        <span>{t(`items.${index}.features.${fIndex}`)}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-
-              {/* 3. NÚT XEM THÊM */}
-              <div className="px-7 pb-7">
-                <a
-                  href="#contact"
-                  className="inline-flex items-center justify-between w-full py-3.5 px-5 rounded-xl bg-slate-50 text-navy font-semibold text-sm transition-all"
-                >
-                  <span>{t('learnMore')}</span>
-                  <ArrowRight className="w-4 h-4" />
-                </a>
-              </div>
-            </div>
-          ))}
+        <div className="mx-auto w-full max-w-6xl overflow-x-hidden">
+          <FanCards
+            cards={serviceCards}
+            spread={100}
+            rotateStep={10}
+            springStiffness={260}
+            springDamping={26}
+          />
         </div>
       </div>
     </section>

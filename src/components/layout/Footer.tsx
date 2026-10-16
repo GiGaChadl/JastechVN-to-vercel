@@ -14,13 +14,13 @@ export function Footer({ locale }: FooterProps) {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-navy text-slate-300 pt-16 pb-12 border-t border-slate-800">
+    <footer className="bg-navy text-slate-300 pt-16 pb-12">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Brand Info */}
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <div className="relative w-12 h-4 rounded-lg overflow-hidden border border-slate-1500 bg-white flex-shrink-0">
+              <div className="relative w-48 h-16 overflow-hidden bg-white flex-shrink-0">
                 <Image
                   src="/images/logo_Jastech.jpg"
                   alt="Jastech Logo"
@@ -28,9 +28,6 @@ export function Footer({ locale }: FooterProps) {
                   className="object-cover"
                 />
               </div>
-              <span className="text-xl font-bold tracking-tight text-white">
-                JASTECH
-              </span>
             </div>
             <p className="text-sm text-slate-400 leading-relaxed">
               {tFooter('desc')}

@@ -14,20 +14,20 @@
     "trust": "Trust",
     "challenges": "Challenges",
     "services": "Services",
-    "whyJastech": "Why Jastech",
+    "whyJastech": "Why JastechVN",
     "caseStudies": "Case Studies",
     "process": "Process",
     "delivery": "Delivery Model",
     "techStack": "Tech Stack",
     "insights": "Insights",
     "contact": "Contact",
-    "about": "About Jastech",
+    "about": "About JastechVN",
     "capabilities": "Capabilities"
   },
   "home": {
     "hero": {
-      "title": "Welcome to Jastech — Accelerating Your Business Growth with High Technical Standards & Fluent Japanese Communication",
-      "description": "Jastech unites Bridge SEs who deeply comprehend Japanese business practices with skilled Vietnamese engineers, delivering end-to-end web, mobile app development, and ongoing maintenance.",
+      "title": "Welcome to JastechVN — Accelerating Your Business Growth with High Technical Standards & Fluent Japanese Communication",
+      "description": "JastechVN unites Bridge SEs who deeply comprehend Japanese business practices with skilled Vietnamese engineers, delivering end-to-end web, mobile app development, and ongoing maintenance.",
       "ctaPrimary": "Request Consultation & Estimate",
       "ctaSecondary": "View Case Studies",
       "metric1": "98%",
@@ -66,9 +66,9 @@
     },
     "challenges": {
       "tag": "CHALLENGES WE SOLVE",
-      "JastechSolution": "Jastech Solution",
+      "JastechSolution": "JastechVN Solution",
       "title": "Solving Engineering Shortages & Quality Concerns for Japanese Enterprises",
-      "subtitle": "Eliminating common offshore outsourcing pain points with Jastech's robust structure and strict quality control.",
+      "subtitle": "Eliminating common offshore outsourcing pain points with JastechVN's robust structure and strict quality control.",
       "items": [
         {
           "title": "Scarcity of Domestic IT Engineers",
@@ -134,8 +134,8 @@
       ]
     },
     "whyJastech": {
-      "tag": "WHY CHOOSE JASTECH",
-      "title": "Why Japanese Clients Choose Jastech",
+      "tag": "WHY CHOOSE JASTECHVN",
+      "title": "Why Japanese Clients Choose JastechVN",
       "subtitle": "Selected not only for engineering prowess, but for deep understanding of Japanese business culture and flawless communication.",
       "points": [
         {
@@ -169,6 +169,8 @@
       "title": "Featured Case Studies",
       "subtitle": "A selection of projects delivered to our Japanese partners (anonymized in adherence to NDAs).",
       "viewAll": "View All Case Studies",
+      "problem": "Problem",
+      "solution": "Solution",
       "items": [
         {
           "client": "Major Retail & Logistics Group [DRAFT]",
@@ -322,7 +324,18 @@
       "note": "We typically reply within 1 business day (Japanese & English support)",
       "companyPlaceholder": "Taro Yamada, Inc.",
       "namePlaceholder": "John Doe",
-      "inquiryPlaceholder": "Please share more details about your project."
+      "inquiryPlaceholder": "Please share more details about your project.",
+      "notification": {
+        "success": {
+          "message": "Message sent successfully!",
+          "description": "We'll get back to you as soon as possible."
+        },
+        "error": {
+          "message": "Failed to send your message.",
+          "description": "Please try again later."
+        },
+        "close": "Close"
+      }
     }
   },
   "footer": {
@@ -331,7 +344,7 @@
     "contactTitle": "Contact Info",
     "address": "Hanoi & Ho Chi Minh City, Vietnam",
     "email": "jastech@iro-kkj.org",
-    "copyright": "© {year} Jastech Co., Ltd. All rights reserved.",
-    "companyName": "Jastech Co., Ltd."
+    "copyright": "© {year} JastechVN Co., Ltd. All rights reserved.",
+    "companyName": "JastechVN Co., Ltd."
   }
 }

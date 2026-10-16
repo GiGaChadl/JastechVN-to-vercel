@@ -1,5 +1,7 @@
 import { ArrowRight, Sparkles, Zap } from 'lucide-react'
 import { useTranslations } from 'next-intl'
+import { DiaTextReveal } from '@/components/ui/dia-text-reveal'
+import { EncryptedText } from '@/components/ui/encrypted-text'
 
 interface HeroSectionProps {
   locale: string
@@ -31,7 +33,14 @@ export function HeroSection({ locale }: HeroSectionProps) {
           <div className="lg:col-span-7 text-left">
             {/* Main Headline */}
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.15] mb-6 whitespace-pre-line text-white">
-              {t('title')}
+              {/* <DiaTextReveal text={t('title')} textColor="#ffffff" /> */}
+              <EncryptedText
+                text={t('title')}
+                revealDelayMs={20}
+                flipDelayMs={30}
+                encryptedClassName="text-muted-foreground"
+                revealedClassName="text-foreground"
+              />
             </h1>
 
             {/* Subtitle description */}

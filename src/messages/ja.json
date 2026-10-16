@@ -14,20 +14,20 @@
     "trust": "信頼",
     "challenges": "課題",
     "services": "サービス",
-    "whyJastech": "Jastechの強み",
+    "whyJastech": "JastechVNの強み",
     "caseStudies": "実績紹介",
     "process": "開発プロセス",
     "techStack": "技術スタック",
     "delivery": "提供体制",
     "insights": "技術ブログ",
     "contact": "ご相談",
-    "about": "Jastechについて",
+    "about": "JastechVNについて",
     "capabilities": "開発能力"
   },
   "home": {
     "hero": {
-      "title": "Jastech — 高品質な技術力と日本語コミュニケーションで、\n貴社のビジネス成長を加速させる",
-      "description": "Jastechは、日本の商習慣と品質基準を深く理解したBrSE（ブリッジSE）と経験豊富なベトナム人エンジニアが一体となり、Web・モバイルアプリ開発から運用保守まで伴走支援します。",
+      "title": "JastechVN — 高品質な技術力と\n日本語コミュニケーションで、\n貴社のビジネス成長を加速させる",
+      "description": "JastechVNは、日本の商習慣と品質基準を深く理解したBrSE（ブリッジSE）と経験豊富なベトナム人エンジニアが一体となり、Web・モバイルアプリ開発から運用保守まで伴走支援します。",
       "ctaPrimary": "無料で相談・お見積り",
       "ctaSecondary": "開発実績を見る",
       "metric1": "98%",
@@ -68,7 +68,7 @@
       "tag": "CHALLENGES WE SOLVE",
       "JastechSolution": "ジャステック・ソリューションズ",
       "title": "日本企業の「開発リソース不足」と「品質不安」を解消",
-      "subtitle": "オフショア開発でよくある課題を、Jastech独自の体制と品質管理でクリアにします。",
+      "subtitle": "オフショア開発でよくある課題を、JastechVN独自の体制と品質管理でクリアにします。",
       "items": [
         {
           "title": "IT人材・エンジニア不足",
@@ -134,8 +134,8 @@
       ]
     },
     "whyJastech": {
-      "tag": "WHY CHOOSE JASTECH",
-      "title": "なぜJastechが選ばれるのか",
+      "tag": "WHY CHOOSE JASTECHVN",
+      "title": "なぜJastechVNが選ばれるのか",
       "subtitle": "技術力だけでなく、日本のビジネス文化と高いコミュニケーション精度で選ばれ続けています。",
       "points": [
         {
@@ -169,6 +169,8 @@
       "title": "主な開発実績",
       "subtitle": "日本企業様とのプロジェクト実績の一部をご紹介します（NDA遵守のため一部匿名表記）。",
       "viewAll": "すべての実績を見る",
+      "problem": "課題",
+      "solution": "解決策",
       "items": [
         {
           "client": "大手流通・小売企業様 [DRAFT]",
@@ -322,7 +324,18 @@
       "note": "通常、1営業日以内にご返信いたします（日本語対応）",
       "companyPlaceholder": "例: 株式会社サンプル",
       "namePlaceholder": "例: 山田 太郎",
-      "inquiryPlaceholder": "開発の概要、ご予算感、開始時期などをご自由にご記入ください"
+      "inquiryPlaceholder": "開発の概要、ご予算感、開始時期などをご自由にご記入ください",
+      "notification": {
+        "success": {
+          "message": "お問い合わせを送信しました！",
+          "description": "担当者より折り返しご連絡いたします。"
+        },
+        "error": {
+          "message": "送信に失敗しました。",
+          "description": "時間をおいて、もう一度お試しください。"
+        },
+        "close": "閉じる"
+      }
     }
   },
   "footer": {
@@ -331,7 +344,7 @@
     "contactTitle": "お問い合わせ情報",
     "address": "ベトナム・ハノイ市 / ホーチミン市",
     "email": "jastech@iro-kkj.org",
-    "copyright": "© {year} Jastech Co., Ltd. All rights reserved.",
-    "companyName": "株式会社Jastech"
+    "copyright": "© {year} JastechVN Co., Ltd. All rights reserved.",
+    "companyName": "株式会社JastechVN"
   }
 }

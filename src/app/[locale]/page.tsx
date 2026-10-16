@@ -1,7 +1,6 @@
 import { HeroSection } from '@/components/sections/HeroSection'
 import { ServicesSection } from '@/components/sections/ServicesSection'
 import { CaseStudiesSection } from '@/components/sections/CaseStudiesSection'
-import { ContactCtaSection } from '@/components/sections/ContactCtaSection'
 
 export default async function HomePage({
   params,
@@ -22,9 +21,6 @@ export default async function HomePage({
 
         {/* 3. Featured Case Studies */}
         <CaseStudiesSection />
-
-        {/* 4. Contact & Consultation CTA */}
-        <ContactCtaSection />
       </main>
     </div>
   )

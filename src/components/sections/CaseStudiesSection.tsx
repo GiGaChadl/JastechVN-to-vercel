@@ -1,5 +1,6 @@
 import { TrendingUp, ArrowRight } from 'lucide-react'
 import { useTranslations } from 'next-intl'
+import { LayoutGrid } from '../ui/layout-grid'
 
 export function CaseStudiesSection() {
   const t = useTranslations('home.caseStudies')
@@ -11,8 +12,39 @@ export function CaseStudiesSection() {
     'https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=800&auto=format&fit=crop', // Enterprise Cloud SaaS
   ]
 
+  const cards = [0, 1, 2].map((i) => ({
+    id: i + 1,
+    className: 'col-span-1 h-72 md:h-96',
+    thumbnail: caseImages[i],
+    content: (
+      <div className="text-white">
+        <h3 className="text-xl sm:text-2x1 font-bold mb-3 leading-snug">
+          {t(`items.${i}.title`)}
+        </h3>
+        <div>
+          <div>
+            <span className="font-bold block mb-1">
+              {t('problem')}:
+              <p className="text-white/80 leading-relaxed">
+                {t(`items.${i}.problem`)}
+              </p>
+            </span>
+          </div>
+          <div>
+            <span className="font-bold block mb-1">
+              {t('solution')}:
+              <p className="text-white/50 leading-relaxed">
+                {t(`items.${i}.solution`)}
+              </p>
+            </span>
+          </div>
+        </div>
+      </div>
+    ),
+  }))
+
   return (
-    <section id="case-studies" className="py-24 bg-white scroll-mt-20">
+    <section id="case-studies" className="py-16 bg-white scroll-mt-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between max-w-6xl mx-auto mb-16 gap-6">
           <div>
@@ -35,76 +67,8 @@ export function CaseStudiesSection() {
           </a>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {[0, 1, 2].map((index) => (
-            <div
-              key={index}
-              className="bg-white rounded-3xl overflow-hidden border border-slate-200/90 hover:border-primary/50 shadow-sm hover:shadow-2xl transition-all flex flex-col justify-between group"
-            >
-              <div>
-                {/* 1. ẢNH DỰ ÁN UNSPLASH */}
-                <div className="w-full h-56 overflow-hidden bg-slate-100">
-                  <img
-                    src={caseImages[index]}
-                    alt={t(`items.${index}.title`)}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-
-                {/* 2. THÔNG TIN CASE STUDY */}
-                <div className="p-7">
-                  <h3 className="text-lg font-bold text-navy mb-4 leading-snug group-hover:text-primary transition-colors">
-                    {t(`items.${index}.title`)}
-                  </h3>
-
-                  {/* Bài toán & Giải pháp */}
-                  <div className="space-y-3 mb-6 text-xs sm:text-sm">
-                    <div className="bg-slate-50 p-3.5 rounded-xl border border-slate-100">
-                      <span className="font-bold text-slate-700 block mb-1">
-                        Problem / 課題:
-                      </span>
-                      <p className="text-slate-600 leading-relaxed">
-                        {t(`items.${index}.problem`)}
-                      </p>
-                    </div>
-
-                    <div className="bg-primary/5 p-3.5 rounded-xl border border-primary/10">
-                      <span className="font-bold text-primary block mb-1">
-                        Solution / 解決策:
-                      </span>
-                      <p className="text-slate-600 leading-relaxed">
-                        {t(`items.${index}.solution`)}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Tech stack chips */}
-                  <div className="mb-4">
-                    <span className="text-[11px] font-semibold text-slate-500 uppercase tracking-wider block mb-2">
-                      Technologies
-                    </span>
-                    <div className="flex flex-wrap gap-1.5">
-                      {[0, 1, 2, 3].map((techIndex) => (
-                        <span
-                          key={techIndex}
-                          className="px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 text-xs font-medium"
-                        >
-                          {t(`items.${index}.tech.${techIndex}`)}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* 3. KẾT QUẢ ĐẠT ĐƯỢC */}
-              <div className="px-7 pb-7">
-                <div className="border-t border-slate-100 pt-4 flex items-center gap-2.5 text-xs sm:text-sm font-semibold text-emerald-800 bg-emerald-50/70 p-3 rounded-xl">
-                  <span>{t(`items.${index}.result`)}</span>
-                </div>
-              </div>
-            </div>
-          ))}
+        <div className="max-w-6x1 mx-auto">
+          <LayoutGrid cards={cards} />
         </div>
       </div>
     </section>
