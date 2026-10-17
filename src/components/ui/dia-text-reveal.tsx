@@ -16,6 +16,7 @@ import {
   useReducedMotion,
   useTransform,
   type HTMLMotionProps,
+  type MotionStyle,
 } from 'motion/react'
 
 import { cn } from '@/lib/utils'
@@ -238,14 +239,14 @@ export function DiaTextReveal({
         : measuredWidths[activeIndex]
       : undefined
 
-  const style: CSSProperties = {
+  const style: MotionStyle = {
     ...GRADIENT_TEXT_STYLE,
     backgroundImage,
     ...(isMulti && {
       display: 'inline-block',
       overflow: 'hidden',
       whiteSpace: 'nowrap',
-      verticalAlign: 'text-center',
+      verticalAlign: 'middle',
       ...(layoutWidth != null && { width: layoutWidth }),
     }),
   }
