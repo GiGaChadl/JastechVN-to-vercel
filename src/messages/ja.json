@@ -14,20 +14,20 @@
     "trust": "信頼",
     "challenges": "課題",
     "services": "サービス",
-    "whyJastech": "JastechVNの強み",
+    "whyJastech": "Jastech VNの強み",
     "caseStudies": "実績紹介",
     "process": "開発プロセス",
     "techStack": "技術スタック",
     "delivery": "提供体制",
     "insights": "技術ブログ",
     "contact": "ご相談",
-    "about": "JastechVNについて",
+    "about": "Jastech VNについて",
     "capabilities": "開発能力"
   },
   "home": {
     "hero": {
-      "title": "JastechVN — 高品質な技術力と\n日本語コミュニケーションで、\n貴社のビジネス成長を加速させる",
-      "description": "JastechVNは、日本の商習慣と品質基準を深く理解したBrSE（ブリッジSE）と経験豊富なベトナム人エンジニアが一体となり、Web・モバイルアプリ開発から運用保守まで伴走支援します。",
+      "title": "Jastech VN — 高品質な技術力と\n日本語コミュニケーションで、\n貴社のビジネス\n成長を加速させる",
+      "description": "Jastech VNは、日本の商習慣と品質基準を深く理解したBrSE（ブリッジSE）と経験豊富なベトナム人エンジニアが一体となり、Web・モバイルアプリ開発から運用保守まで伴走支援します。",
       "ctaPrimary": "無料で相談・お見積り",
       "ctaSecondary": "開発実績を見る",
       "metric1": "98%",
@@ -65,10 +65,10 @@
       ]
     },
     "challenges": {
-      "tag": "CHALLENGES WE SOLVE",
+      "tag": "私たちが解決する課題",
       "JastechSolution": "ジャステック・ソリューションズ",
       "title": "日本企業の「開発リソース不足」と「品質不安」を解消",
-      "subtitle": "オフショア開発でよくある課題を、JastechVN独自の体制と品質管理でクリアにします。",
+      "subtitle": "オフショア開発でよくある課題を、Jastech VN独自の体制と品質管理でクリアにします。",
       "items": [
         {
           "title": "IT人材・エンジニア不足",
@@ -93,7 +93,7 @@
       ]
     },
     "services": {
-      "tag": "OUR SERVICES",
+      "tag": "私たちのサービス",
       "title": "ビジネスの課題に応じた柔軟な開発サービス",
       "subtitle": "要件定義から設計・開発、QA、リリース後の保守運用までワンストップで対応します。",
       "learnMore": "詳しく見る",
@@ -134,8 +134,8 @@
       ]
     },
     "whyJastech": {
-      "tag": "WHY CHOOSE JASTECHVN",
-      "title": "なぜJastechVNが選ばれるのか",
+      "tag": "なぜJASTECH VNを選ぶの？",
+      "title": "なぜJastech VNが選ばれるのか",
       "subtitle": "技術力だけでなく、日本のビジネス文化と高いコミュニケーション精度で選ばれ続けています。",
       "points": [
         {
@@ -165,7 +165,7 @@
       ]
     },
     "caseStudies": {
-      "tag": "CASE STUDIES",
+      "tag": "ケーススタディ",
       "title": "主な開発実績",
       "subtitle": "日本企業様とのプロジェクト実績の一部をご紹介します（NDA遵守のため一部匿名表記）。",
       "viewAll": "すべての実績を見る",
@@ -202,7 +202,7 @@
       ]
     },
     "process": {
-      "tag": "DEVELOPMENT PROCESS",
+      "tag": "開発プロセス",
       "title": "安心のデリバリープロセス",
       "subtitle": "お問い合わせから納品・運用まで、明確で安心できるステップで進めます。",
       "steps": [
@@ -239,18 +239,31 @@
       ]
     },
     "delivery": {
-      "tag": "DELIVERY MODEL",
-      "title": "日越ハイブリッド連携体制",
-      "subtitle": "日本とベトナムの時差はわずか2時間。リアルタイムで円滑なプロジェクト進行が可能です。",
-      "brseRole": "BrSE（ブリッジSE）",
-      "brseDesc": "要件の正確な翻訳、仕様策定、進捗管理を担当。日本語で直接コミュニケーション可能です。",
-      "devRole": "ベトナム開発チーム",
-      "devDesc": "ベトナム工科系トップ大学出身を中心とした、技術力と向上心の高い精鋭エンジニア陣。",
-      "collabRole": "スムーズな協業環境",
-      "collabDesc": "時差-2時間のメリットを活かし、日本の就業時間内にリアルタイムでミーティングやSlack連絡が可能。"
+      "tag": "配送モデル",
+      "title": "日越ハイブリッド開発体制",
+      "subtitle": "東京とベトナムの時差はわずか2時間。リアルタイムでスムーズな連携を実現します。",
+      "problem": "役割",
+      "solution": "メリット",
+      "items": [
+        {
+          "title": "ブリッジSE(BrSE)",
+          "problem": "日本語で要件を整理し、仕様書への落とし込みから日々のスプリント管理までを担当します。",
+          "solution": "認識のズレがなく、日本のチームと同じように日本語で相談できます。"
+        },
+        {
+          "title": "ベトナム開発チーム",
+          "problem": "ベトナムの一流大学出身で、課題解決力の高いエンジニアが開発を担います。",
+          "solution": "高品質な開発を、競争力のあるコストで実現します。"
+        },
+        {
+          "title": "毎日のスムーズな連携",
+          "problem": "時差はわずか2時間。定例会議やSlackでのやり取りは日本の営業時間内に行えます。",
+          "solution": "リアルタイムでフィードバックでき、意思決定も迅速になります。"
+        }
+      ]
     },
     "techStack": {
-      "tag": "TECHNOLOGY STACK",
+      "tag": "テクノロジースタック",
       "title": "モダンかつ堅牢なテクノロジースタック",
       "subtitle": "プロジェクトの要件に合わせて、最適な技術を選定・導入します。",
       "categories": [
@@ -292,7 +305,7 @@
       ]
     },
     "insights": {
-      "tag": "LATEST INSIGHTS",
+      "tag": "最新のインサイト",
       "title": "最新インサイト & ブログ",
       "subtitle": "オフショア開発のノウハウや技術トレンド、現場の知見を発信しています。",
       "readMore": "記事を読む",
@@ -336,7 +349,42 @@
         },
         "close": "閉じる"
       }
+    },
+    "testimonial": {
+      "user1": {
+        "quote": "エンジニアは流暢な日本語でサポートしてくれるため、要望が正確に伝わらないといった心配は全くありませんでした。その結果、予定より2ヶ月早く製品をリリースすることができました。",
+        "name": "Daniel Harper",
+        "designation": "Nexora Systems プロダクトマネージャー"
+      },
+      "user1": {
+        "quote": "コード品質もテストも、最初のスプリントから日本の基準を満たしていました。リリース当日の不安がなくなりました。",
+        "name": "Kenji Watanabe",
+        "designation": "Hikari Logistics CTO"
+      },
+      "user3": {
+        "quote": "ベトナムの専任チームの立ち上げは迅速でスムーズでした。開発コストを抑えながら、成果物は増えています。",
+        "name": "Emily Foster",
+        "designation": "BlueMarlin Retail オペレーションディレクター"
+      },
+      "user4": {
+        "quote": "ブリッジSEが仕様の整理から日々の打ち合わせまで担当してくれます。まるで隣の席のチームと働いているようです。",
+        "name": "Takashi Mori",
+        "designation": "Sakura Cloud エンジニアリングリード"
+      },
+      "user5": {
+        "quote": "納期は厳守、コミュニケーションは透明で、チームから改善提案も積極的にありました。すでに契約を延長しています。",
+        "name": "Rachel Nguyen",
+        "designation": "Orbit Finance テクノロジー担当VP"
+      }
     }
+  },
+  "about": {
+    "title": "Y日本企業のための、信頼されるテックパートナー",
+    "description": "Jastech VNは高度な技術力、厳格な品質基準、そして日本語による円滑な意思疎通を武器に、お客様のデジタルトランスフォーメーションを強力に伴走支援します。"
+  },
+  "capability": {
+    "title": "堅牢な開発プロセスと最先端の技術スタック",
+    "description": "アジャイル開発による迅速なデリバリーと、スケーラブルなクラウドネイティブアーキテクチャで確かなプロダクト価値を創出します。"
   },
   "footer": {
     "desc": "ベトナムの優秀なエンジニアと日本語堪能なBrSEが一体となり、日本企業のソフトウェア開発を力強く支えます。",
@@ -344,7 +392,7 @@
     "contactTitle": "お問い合わせ情報",
     "address": "ベトナム・ハノイ市 / ホーチミン市",
     "email": "jastech@iro-kkj.org",
-    "copyright": "© {year} JastechVN Co., Ltd. All rights reserved.",
-    "companyName": "株式会社JastechVN"
+    "copyright": "© {year} Jastech VN Co., Ltd. All rights reserved.",
+    "companyName": "株式会社Jastech VN"
   }
 }

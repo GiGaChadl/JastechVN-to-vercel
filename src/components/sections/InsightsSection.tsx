@@ -1,6 +1,7 @@
-import { Calendar, ArrowRight } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import { useTranslations, useLocale } from 'next-intl'
 import Link from 'next/link'
+import { LayoutGrid } from '../ui/layout-grid'
 
 export function InsightsSection() {
   const t = useTranslations('home.insights')
@@ -12,6 +13,28 @@ export function InsightsSection() {
     'https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop', // Next.js & Modern Code
     'https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=800&auto=format&fit=crop', // Agile Daily Scrum
   ]
+
+  const cards = [0, 1, 2].map((i) => ({
+    id: i + 1,
+    className: 'col-span-1 h-72 md:h-96',
+    thumbnail: insightImages[i],
+    content: (
+      <div className="text-white">
+        <h3 className="text-xl sm:text-2x1 font-bold mb-3 leading-snug">
+          {t(`items.${i}.title`)}
+        </h3>
+        <div>
+          <div>
+            <span className="font-bold block mb-1">
+              <p className="text-white/80 leading-relaxed">
+                {t(`items.${i}.excerpt`)}
+              </p>
+            </span>
+          </div>
+        </div>
+      </div>
+    ),
+  }))
 
   return (
     <section id="insights" className="py-24 bg-slate-50/50 scroll-mt-20">
@@ -28,46 +51,8 @@ export function InsightsSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {[0, 1, 2].map((index) => (
-            <article
-              key={index}
-              className="bg-white rounded-3xl overflow-hidden border border-slate-200/90 hover:border-primary/50 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between group"
-            >
-              <div>
-                {/* 1. ẢNH BÀI VIẾT UNSPLASH */}
-                <div className="w-full h-48 overflow-hidden bg-slate-100">
-                  <img
-                    src={insightImages[index]}
-                    alt={t(`items.${index}.title`)}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-
-                {/* 2. NỘI DUNG */}
-                <div className="p-6">
-                  <h3 className="text-base sm:text-lg font-bold text-navy mb-3 group-hover:text-primary transition-colors leading-snug">
-                    {t(`items.${index}.title`)}
-                  </h3>
-
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                    {t(`items.${index}.excerpt`)}
-                  </p>
-                </div>
-              </div>
-
-              {/* 3. NÚT ĐỌC BÀI (DÙNG ĐÚNG useLocale ĐỂ CHUYỂN TRANG) */}
-              <div className="px-6 pb-6">
-                <Link
-                  href={`/${locale}#contact`}
-                  className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-primary group-hover:translate-x-1 transition-transform"
-                >
-                  <span>{t('readMore')}</span>
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
-            </article>
-          ))}
+        <div className="max-w-6x1 mx-auto">
+          <LayoutGrid cards={cards} />
         </div>
       </div>
     </section>

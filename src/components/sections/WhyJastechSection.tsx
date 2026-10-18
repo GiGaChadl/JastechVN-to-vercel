@@ -1,7 +1,21 @@
 import { useTranslations } from 'next-intl'
+import { SwipeCarousel } from '@/components/ui/swipe-carousel'
 
 export function WhyJastechSection() {
   const t = useTranslations('home.whyJastech')
+  const slides = [0, 1, 2, 3, 4, 5].map((index) => (
+    <div key={index}>
+      <span className="text-xs font-bold tracking-widest text-white/70">
+        0{index + 1} / 06
+      </span>
+      <h3 className="mt-2 text-2xl font-bold md:text-3xl">
+        {t(`points.${index}.title`)}
+      </h3>
+      <p className="mt-3 text-sm leading-relaxed text-white/85 md:text-base">
+        {t(`points.${index}.desc`)}
+      </p>
+    </div>
+  ))
 
   return (
     <section id="why-jastech" className="py-24 bg-slate-50/80 scroll-mt-20">
@@ -18,38 +32,12 @@ export function WhyJastechSection() {
             {t('subtitle')}
           </p>
         </div>
-
-        {/* Split layout: 6 cards bên trái, ảnh bên phải */}
-        {/* lg:grid-cols-[1fr_400px] — bên trái chiếm phần còn lại, bên phải cố định 400px */}
-        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-10 items-start">
-          {/* Cột trái — 6 feature cards xếp thành 2 cột */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {[0, 1, 2, 3, 4, 5].map((index) => (
-              <div
-                key={index}
-                className="bg-white rounded-2xl p-7 border border-slate-200/80 hover:border-primary/50 shadow-sm hover:shadow-md transition-all group"
-              >
-                <h3 className="text-lg font-bold text-navy mb-2.5">
-                  {t(`points.${index}.title`)}
-                </h3>
-                <p className="text-sm text-slate-600 leading-relaxed">
-                  {t(`points.${index}.desc`)}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          {/* Cột phải — ảnh full height, sticky khi scroll */}
-          {/* sticky top-24 — ảnh "dính" ở vị trí cố định khi người dùng cuộn */}
-          <div className="hidden lg:block sticky top-24">
-            <div className="rounded-2xl overflow-hidden shadow-xl h-[560px]">
-              <img
-                src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=800&auto=format&fit=crop"
-                alt="Jastech team collaboration"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-              />
-            </div>
-          </div>
+        <div className="mx-auto max-w-6xl">
+          <SwipeCarousel
+            image="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=1600&auto=format&fit=crop"
+            imageAlt="Jastech team collaboration"
+            slides={slides}
+          />
         </div>
       </div>
     </section>

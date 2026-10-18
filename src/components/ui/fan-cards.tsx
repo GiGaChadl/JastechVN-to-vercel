@@ -113,6 +113,7 @@ type FanCardProps = {
   fanY: number
   rotation: number
   zIndex: number
+  scale: number
   spring: typeof DEFAULT_SPRING
   onClick: () => void
 }
@@ -126,17 +127,25 @@ const FanCard = ({
   rotation,
   zIndex,
   spring,
+  scale,
   onClick,
 }: FanCardProps) => {
   const [hovered, setHovered] = useState(false)
 
-  const targetX = isSelected ? -40 : isAnyActive ? fanX * 0.45 : fanX
-  const targetY = isSelected ? ACTIVE_CARD_Y : isAnyActive ? DOCK_Y : fanY
+  const compact = scale < 0.8
+  const showText = !compact || isSelected
+
+  const targetX = isSelected ? -40 * scale : isAnyActive ? fanX * 0.45 : fanX
+  const targetY = isSelected
+    ? ACTIVE_CARD_Y * scale
+    : isAnyActive
+      ? DOCK_Y * scale
+      : fanY
   const targetRotate = isSelected ? 0 : isAnyActive ? rotation * 0.15 : rotation
   const targetScale = isSelected ? 1 : isAnyActive ? 0.7 : hovered ? 1.04 : 1
 
-  const currentWidth = isSelected ? ACTIVE_CARD_W : BASE_CARD_W
-  const currentHeight = isSelected ? ACTIVE_CARD_H : BASE_CARD_H
+  const currentWidth = (isSelected ? ACTIVE_CARD_W : BASE_CARD_W) * scale
+  const currentHeight = (isSelected ? ACTIVE_CARD_H : BASE_CARD_H) * scale
 
   return (
     <motion.div
@@ -144,7 +153,7 @@ const FanCard = ({
         position: 'absolute',
         top: 0,
         left: '50%',
-        marginLeft: -BASE_CARD_W / 2,
+        marginLeft: (-BASE_CARD_W / 2) * scale,
         zIndex,
         cursor: isSelected ? 'zoom-out' : 'pointer',
         transformOrigin: 'bottom center',
@@ -188,8 +197,19 @@ const FanCard = ({
         )}
       />
 
-      <div className="pointer-events-none relative flex h-full flex-col justify-between p-8">
-        <div className="min-h-0 w-full flex-1 overflow-hidden">
+      <div
+        className={cn(
+          'pointer-events-none relative flex h-full flex-col justify-between',
+          compact ? 'p-4' : 'p-8'
+        )}
+      >
+        <div
+          className={cn(
+            'min-h-0 w-full flex-1 overflow-hidden transition-opacity duration-300',
+            compact && 'absolute inset-0',
+            compact && isSelected && 'opacity-20'
+          )}
+        >
           {card.content ?? (
             <div
               style={{
@@ -199,46 +219,52 @@ const FanCard = ({
             />
           )}
         </div>
+        {showText && (
+          <div className={cn('shrink-0', compact ? 'p-1' : 'p-1')}>
+            <motion.h2
+              layoutId={`title-${card.id}`}
+              style={{ color: card.textColor }}
+              className={cn(
+                'font-serif font-normal leading-[0.95] tracking-tight',
+                compact ? 'text-1xl' : isSelected ? 'text-5xl' : 'text-4xl'
+              )}
+            >
+              {card.title.includes(' ') ? (
+                <>
+                  <span className="block">
+                    {card.title.slice(0, card.title.indexOf(' '))}
+                  </span>
+                  <span className="block">
+                    {card.title.slice(card.title.indexOf(' ') + 1)}
+                  </span>
+                </>
+              ) : (
+                card.title
+              )}
+            </motion.h2>
 
-        <div className="shrink-0 pt-4">
-          <motion.h2
-            layoutId={`title-${card.id}`}
-            style={{ color: card.textColor }}
-            className={cn(
-              'font-serif font-normal leading-[0.95] tracking-tight',
-              isSelected ? 'text-5xl' : 'text-4xl'
-            )}
-          >
-            {card.title.includes(' ') ? (
-              <>
-                <span className="block">
-                  {card.title.slice(0, card.title.indexOf(' '))}
-                </span>
-                <span className="block">
-                  {card.title.slice(card.title.indexOf(' ') + 1)}
-                </span>
-              </>
-            ) : (
-              card.title
-            )}
-          </motion.h2>
-
-          <AnimatePresence mode="popLayout">
-            {isSelected ? (
-              <motion.p
-                layoutId={`desc-${card.id}`}
-                initial={{ opacity: 0, y: 15, filter: 'blur(4px)' }}
-                animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-                exit={{ opacity: 0, y: 15, filter: 'blur(4px)' }}
-                transition={{ duration: 0.25, delay: 0.08 }}
-                style={{ color: card.subtitleColor }}
-                className="mt-3 max-w-[340px] text-sm leading-relaxed"
-              >
-                {card.subtitle}
-              </motion.p>
-            ) : null}
-          </AnimatePresence>
-        </div>
+            <AnimatePresence mode="popLayout">
+              {isSelected ? (
+                <motion.p
+                  layoutId={`desc-${card.id}`}
+                  initial={{ opacity: 0, y: 15, filter: 'blur(4px)' }}
+                  animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                  exit={{ opacity: 0, y: 15, filter: 'blur(4px)' }}
+                  transition={{ duration: 0.25, delay: 0.08 }}
+                  style={{ color: card.subtitleColor }}
+                  className={cn(
+                    'leading-relaxed',
+                    compact
+                      ? 'mt-2 max-w-full text-xs'
+                      : 'mt-3 max-w-[340px] text-sm'
+                  )}
+                >
+                  {card.subtitle}
+                </motion.p>
+              ) : null}
+            </AnimatePresence>
+          </div>
+        )}
       </div>
     </motion.div>
   )
@@ -259,6 +285,8 @@ export function FanCards({
   const rotationScale = rotateStep / BASE_ROTATION_STEP
   const isAnyActive = selectedId !== null
   const count = cards.length
+
+  const [scale, setScale] = useState(1)
 
   const spring = {
     type: 'spring' as const,
@@ -281,6 +309,21 @@ export function FanCards({
     return () => document.removeEventListener('mousedown', handleOutsideClick)
   }, [])
 
+  useEffect(() => {
+    const el = containerRef.current
+    if (!el) return
+
+    const update = () => {
+      // 820 = bề rộng thiết kế gốc (BASE_CARD_W + 500)
+      setScale(Math.min(1, el.clientWidth / 820))
+    }
+    update()
+
+    const ro = new ResizeObserver(update)
+    ro.observe(el)
+    return () => ro.disconnect()
+  }, [])
+
   const handleCardClick = (id: string) => {
     setSelectedId((current) => (current === id ? null : id))
   }
@@ -289,15 +332,15 @@ export function FanCards({
     <div
       ref={containerRef}
       className={cn(
-        'relative flex min-h-[800px] w-full items-center justify-center overflow-visible pt-40 pb-16',
+        'relative flex min-h-[520px] w-full items-center justify-center overflow-visible pt-24 pb-16 md:min-h-[800px] md:pt-40',
         className
       )}
     >
       <div
         className="relative"
         style={{
-          width: BASE_CARD_W + 500,
-          height: BASE_CARD_H + 180,
+          width: (BASE_CARD_W + 500) * scale,
+          height: (BASE_CARD_H + 180) * scale,
         }}
       >
         {cards.map((card, index) => {
@@ -309,8 +352,9 @@ export function FanCards({
               card={card}
               isSelected={isSelected}
               isAnyActive={isAnyActive}
-              fanX={(index - (count - 1) / 2) * 180 * spreadScale}
-              fanY={index % 2 === 0 ? 15 : 50}
+              scale={scale}
+              fanX={(index - (count - 1) / 2) * 180 * spreadScale * scale}
+              fanY={(index % 2 === 0 ? 15 : 50) * scale}
               rotation={card.defaultRotation * rotationScale}
               zIndex={card.stackIndex}
               spring={spring}

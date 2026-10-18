@@ -1,4 +1,4 @@
-import { TrendingUp, ArrowRight } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import { LayoutGrid } from '../ui/layout-grid'
 

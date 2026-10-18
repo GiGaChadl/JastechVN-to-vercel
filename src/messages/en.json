@@ -14,20 +14,20 @@
     "trust": "Trust",
     "challenges": "Challenges",
     "services": "Services",
-    "whyJastech": "Why JastechVN",
+    "whyJastech": "Why Jastech VN",
     "caseStudies": "Case Studies",
     "process": "Process",
     "delivery": "Delivery Model",
     "techStack": "Tech Stack",
     "insights": "Insights",
     "contact": "Contact",
-    "about": "About JastechVN",
+    "about": "About Jastech VN",
     "capabilities": "Capabilities"
   },
   "home": {
     "hero": {
-      "title": "Welcome to JastechVN — Accelerating Your Business Growth with High Technical Standards & Fluent Japanese Communication",
-      "description": "JastechVN unites Bridge SEs who deeply comprehend Japanese business practices with skilled Vietnamese engineers, delivering end-to-end web, mobile app development, and ongoing maintenance.",
+      "title": "Welcome to Jastech VN — Accelerating Your Business Growth with High Technical Standards & Fluent Japanese Communication",
+      "description": "Jastech VN unites Bridge SEs who deeply comprehend Japanese business practices with skilled Vietnamese engineers, delivering end-to-end web, mobile app development, and ongoing maintenance.",
       "ctaPrimary": "Request Consultation & Estimate",
       "ctaSecondary": "View Case Studies",
       "metric1": "98%",
@@ -66,9 +66,9 @@
     },
     "challenges": {
       "tag": "CHALLENGES WE SOLVE",
-      "JastechSolution": "JastechVN Solution",
+      "JastechSolution": "Jastech VN Solution",
       "title": "Solving Engineering Shortages & Quality Concerns for Japanese Enterprises",
-      "subtitle": "Eliminating common offshore outsourcing pain points with JastechVN's robust structure and strict quality control.",
+      "subtitle": "Eliminating common offshore outsourcing pain points with Jastech VN's robust structure and strict quality control.",
       "items": [
         {
           "title": "Scarcity of Domestic IT Engineers",
@@ -134,8 +134,8 @@
       ]
     },
     "whyJastech": {
-      "tag": "WHY CHOOSE JASTECHVN",
-      "title": "Why Japanese Clients Choose JastechVN",
+      "tag": "WHY CHOOSE JASTECH VN",
+      "title": "Why Japanese Clients Choose Jastech VN",
       "subtitle": "Selected not only for engineering prowess, but for deep understanding of Japanese business culture and flawless communication.",
       "points": [
         {
@@ -242,12 +242,25 @@
       "tag": "DELIVERY MODEL",
       "title": "Japan-Vietnam Hybrid Delivery Model",
       "subtitle": "Only 2 hours time difference between Tokyo and Vietnam enables seamless, real-time collaboration.",
-      "brseRole": "Bridge SE (BrSE)",
-      "brseDesc": "Manages specification translation, requirement elicitation, and daily sprint tracking in fluent Japanese.",
-      "devRole": "Vietnam Engineering Team",
-      "devDesc": "Skilled engineers graduated from top engineering universities in Vietnam with strong problem-solving capabilities.",
-      "collabRole": "Seamless Daily Collaboration",
-      "collabDesc": "Thanks to the 2-hour timezone gap, sync meetings and Slack discussions happen during normal Tokyo business hours."
+      "problem": "Role",
+      "solution": "Benefit",
+      "items": [
+        {
+          "title": "Bridge SE (BrSE)",
+          "problem": "Turns Japanese requirements into clear specifications and tracks every sprint in fluent Japanese.",
+          "solution": "No miscommunication. You talk to us in Japanese, just like a local team."
+        },
+        {
+          "title": "Vietnam Engineering Team",
+          "problem": "Skilled engineers from top Vietnamese universities, strong at solving problems.",
+          "solution": "High-quality development at a competitive cost."
+        },
+        {
+          "title": "Seamless Daily Collaboration",
+          "problem": "Only a 2-hour time gap. Meetings and Slack chats happen in Tokyo business hours.",
+          "solution": "Real-time feedback and faster decisions."
+        }
+      ]
     },
     "techStack": {
       "tag": "TECHNOLOGY STACK",
@@ -336,7 +349,42 @@
         },
         "close": "Close"
       }
+    },
+    "testimonial": {
+      "user1": {
+        "quote": "Their engineers communicate in fluent Japanese, so our requirements never got lost in translation. We launched two months earlier than planned.",
+        "name": "Daniel Harper",
+        "designation": "Product Manager at Nexora Systems"
+      },
+      "user2": {
+        "quote": "Code quality and testing met Japanese standards from the very first sprint. We no longer worry about release-day surprises.",
+        "name": "Kenji Watanabe",
+        "designation": "CTO at Hikari Logistics"
+      },
+      "user3": {
+        "quote": "Building a dedicated team in Vietnam was fast and painless. Our development costs dropped while our output increased.",
+        "name": "Emily Foster",
+        "designation": "Operations Director at BlueMarlin Retail"
+      },
+      "user4": {
+        "quote": "The bilingual bridge engineers handle everything from specifications to daily meetings. It feels like working with a team down the hall.",
+        "name": "Takashi Mori",
+        "designation": "Engineering Lead at Sakura Cloud"
+      },
+      "user5": {
+        "quote": "Delivery was on time, communication was transparent, and the team proactively suggested improvements. We have already extended the contract.",
+        "name": "Rachel Nguyen",
+        "designation": "VP of Technology at Orbit Finance"
+      }
     }
+  },
+  "about": {
+    "title": "Your Trusted Engineering Partner in Vietnam for Japanese Enterprises",
+    "description": "Combining top-tier engineering talent, Japanese quality assurance standards, and frictionless bilingual communication to power your digital growth."
+  },
+  "capability": {
+    "title": "Robust Engineering Process & Modern Tech Stack",
+    "description": "Rapid delivery powered by Agile Scrum methodology and resilient cloud-native technologies."
   },
   "footer": {
     "desc": "Empowering Japanese enterprises through exceptional Vietnamese software engineers and bilingual Bridge SEs.",
@@ -344,7 +392,7 @@
     "contactTitle": "Contact Info",
     "address": "Hanoi & Ho Chi Minh City, Vietnam",
     "email": "jastech@iro-kkj.org",
-    "copyright": "© {year} JastechVN Co., Ltd. All rights reserved.",
-    "companyName": "JastechVN Co., Ltd."
+    "copyright": "© {year} Jastech VN Co., Ltd. All rights reserved.",
+    "companyName": "Jastech VN Co., Ltd."
   }
 }

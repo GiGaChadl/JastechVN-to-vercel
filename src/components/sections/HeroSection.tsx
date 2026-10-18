@@ -14,12 +14,13 @@ export function HeroSection({ locale }: HeroSectionProps) {
   // 1. Digital Network / Data Flow: https://media.giphy.com/media/xT9IgzoKnwFNmISR8I/giphy.gif
   // 2. Cyber Matrix Code: https://media.giphy.com/media/3oKIPnAiaMCws8nOsE/giphy.gif
   // 3. AI / Digital Tech Loop: https://media.giphy.com/media/L1R1tvI9svkIWwpVYr/giphy.gif
+  // SVCSsoKU5v6ZJLk07n
   const heroGifUrl =
-    'https://media.giphy.com/media/SVCSsoKU5v6ZJLk07n/giphy.gif'
+    'https://media.giphy.com/media/UTHFuyuMENren9AI9b/giphy.gif'
 
   return (
     <section className="relative isolate pt-28 pb-20 md:pt-36 md:pb-28 overflow-hidden bg-slate-900 text-white">
-      <div className="container mx-auto z-10">
+      <div className="container mx-auto z-10 px-4 sm:px-6 lg:px-8">
         <div className="absolute inset-0 -z-10">
           <img
             src={heroGifUrl}

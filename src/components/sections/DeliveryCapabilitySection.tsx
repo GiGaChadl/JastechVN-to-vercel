@@ -1,9 +1,43 @@
-
 import { useTranslations } from 'next-intl'
+import { LayoutGrid } from '../ui/layout-grid'
 
 export function DeliveryCapabilitySection() {
   const t = useTranslations('home.delivery')
-
+  const caseImages = [
+    'https://images.unsplash.com/photo-1560179707-f14e90ef3623?q=80&w=800&auto=format&fit=crop', // B2B EC Platform
+    'https://images.unsplash.com/photo-1542744094-3a31f272c490?q=80&w=800&auto=format&fit=crop', // Smart Logistics App
+    'https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=800&auto=format&fit=crop', // Enterprise Cloud SaaS
+  ]
+  const cards = [0, 1, 2].map((i) => ({
+    id: i + 1,
+    className: 'col-span-1 h-72 md:h-96',
+    thumbnail: caseImages[i],
+    content: (
+      <div className="text-white">
+        <h3 className="text-xl sm:text-2x1 font-bold mb-3 leading-snug">
+          {t(`items.${i}.title`)}
+        </h3>
+        <div>
+          <div>
+            <span className="font-bold block mb-1">
+              {t('problem')}:
+              <p className="text-white/80 leading-relaxed">
+                {t(`items.${i}.problem`)}
+              </p>
+            </span>
+          </div>
+          <div>
+            <span className="font-bold block mb-1">
+              {t('solution')}:
+              <p className="text-white/50 leading-relaxed">
+                {t(`items.${i}.solution`)}
+              </p>
+            </span>
+          </div>
+        </div>
+      </div>
+    ),
+  }))
   return (
     <section id="delivery" className="py-24 bg-white border-y border-slate-100">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -19,84 +53,8 @@ export function DeliveryCapabilitySection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-
-          {/* BrSE Card */}
-          <div className="rounded-2xl border border-primary/20 shadow-sm overflow-hidden flex flex-col">
-            {/* Ảnh phía trên card — Japanese business meeting */}
-            <div className="h-48 overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?q=80&w=800&auto=format&fit=crop"
-                alt="BrSE Bridge Role"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-            {/* Nội dung phía dưới card */}
-            <div className="bg-gradient-to-b from-primary/5 to-white p-8 flex flex-col justify-between flex-1">
-              <div>
-                <h3 className="text-xl font-bold text-navy mb-3">
-                  {t('brseRole')}
-                </h3>
-                <p className="text-sm text-slate-600 leading-relaxed">
-                  {t('brseDesc')}
-                </p>
-              </div>
-              <div className="mt-6 pt-4 border-t border-slate-100 text-xs font-semibold text-primary">
-                JLPT N1/N2 • Japanese Culture Alignment
-              </div>
-            </div>
-          </div>
-
-          {/* Timezone Sync Card */}
-          <div className="rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex flex-col">
-            {/* Ảnh phía trên card — world clock / collaboration */}
-            <div className="h-48 overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1542744094-3a31f272c490?q=80&w=800&auto=format&fit=crop"
-                alt="Timezone Collaboration"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-            <div className="bg-gradient-to-b from-navy/5 to-white p-8 flex flex-col justify-between flex-1">
-              <div>
-                <h3 className="text-xl font-bold text-navy mb-3">
-                  {t('collabRole')}
-                </h3>
-                <p className="text-sm text-slate-600 leading-relaxed">
-                  {t('collabDesc')}
-                </p>
-              </div>
-              <div className="mt-6 pt-4 border-t border-slate-100 text-xs font-semibold text-navy">
-                Tokyo (GMT+9) ⇄ Vietnam (GMT+7)
-              </div>
-            </div>
-          </div>
-
-          {/* Vietnam Dev Team Card */}
-          <div className="rounded-2xl border border-accent/30 shadow-sm overflow-hidden flex flex-col">
-            {/* Ảnh phía trên card — developers at work */}
-            <div className="h-48 overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop"
-                alt="Vietnam Dev Team"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-            <div className="bg-gradient-to-b from-accent/10 to-white p-8 flex flex-col justify-between flex-1">
-              <div>
-                <h3 className="text-xl font-bold text-navy mb-3">
-                  {t('devRole')}
-                </h3>
-                <p className="text-sm text-slate-600 leading-relaxed">
-                  {t('devDesc')}
-                </p>
-              </div>
-              <div className="mt-6 pt-4 border-t border-slate-100 text-xs font-semibold text-accent-700">
-                Top University Talents • Modern Tech Stacks
-              </div>
-            </div>
-          </div>
-
+        <div className="max-w-6x1 mx-auto">
+          <LayoutGrid cards={cards} />
         </div>
       </div>
     </section>

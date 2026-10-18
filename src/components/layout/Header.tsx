@@ -134,15 +134,6 @@ export function Header({ locale }: HeaderProps) {
                 {item.label}
               </a>
             ))}
-            <div className="pt-3 border-t border-slate-100 flex flex-col gap-2">
-              <a
-                href="#contact"
-                onClick={() => setMobileMenuOpen(false)}
-                className="w-full text-center px-4 py-3 rounded-lg bg-navy text-white font-medium text-sm"
-              >
-                {tNav('contact')}
-              </a>
-            </div>
           </div>
         </div>
       )}
